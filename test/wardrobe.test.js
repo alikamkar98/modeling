@@ -104,8 +104,29 @@ test('every occasion can be dressed across the whole year', () => {
     for (const t of [-5, 0, 8, 15, 22, 32]) {
       for (const wet of [false, true]) {
         const r = suggestOutfits(W, key, weather(t, wet));
+        // Cycling is the one exception, and for a real reason: every cycling
+        // bottom in the wardrobe is shorts, and shorts are refused below 12C.
+        // Cold-weather cycling needs tights that aren't owned, so the engine
+        // says what is missing instead of putting bib shorts on a freezing ride.
+        if (key === 'cycling' && t < 12) {
+          assert.equal(r.ok, false, `cycling @${t}C should report the gap`);
+          assert.match(r.reason, /bottom/);
+          continue;
+        }
         assert.equal(r.ok, true, `${key} @${t}C wet=${wet}: ${r.reason}`);
       }
+    }
+  }
+});
+
+test('cycling uses the dedicated kit, not general sportswear', () => {
+  // Allowing 'sporty' here let running shoes and joggers outscore the cleats
+  // and bibs, which is not what anyone means by "I'm going cycling".
+  const r = suggestOutfits(W, 'cycling', weather(18));
+  assert.equal(r.ok, true, r.reason);
+  for (const outfit of r.outfits) {
+    for (const item of outfit.items) {
+      assert.equal(item.style, 'cycling', `${item.name} is not cycling kit`);
     }
   }
 });

@@ -194,16 +194,16 @@ test('manual fallback is marked as manual', () => {
   assert.match(w.description, /by hand/);
 });
 
-test('figure renders every garment layer as SVG', () => {
+test('figure renders a body and names what it is wearing', () => {
+  // The garments themselves are photographs cut out in the browser, so the
+  // server-rendered markup is the body plus an accessible label.
   const req = requirementsFrom({ feelsLike: 15, precipitationProbability: 0, precipitation: 0, windSpeed: 2, code: 0 });
   const result = suggestOutfits(WARDROBE, 'university', req);
-  const svg = renderFigure(result.outfits[0].items);
-  assert.match(svg, /^<svg/);
-  assert.match(svg, /<\/svg>$/);
-  // Each garment's colour should actually appear in the drawing.
-  for (const item of result.outfits[0].items) {
-    if (['top', 'bottom', 'outerwear', 'shoes', 'swimwear'].includes(item.category)) {
-      assert.ok(svg.includes(item.hex), `figure is missing ${item.name} (${item.hex})`);
-    }
+  const items = result.outfits[0].items;
+  const html = renderFigure(items);
+  assert.match(html, /class="figure"/);
+  assert.match(html, /<svg class="figure__body"/);
+  for (const item of items) {
+    assert.ok(html.includes(item.name), `figure label is missing ${item.name}`);
   }
 });

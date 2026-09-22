@@ -10,6 +10,17 @@ export const OCCASIONS = {
     styles: ['sporty'],
     note: 'built for moving, nothing restrictive',
   },
+  cycling: {
+    label: 'Cycling',
+    required: ['top', 'bottom', 'shoes'],
+    optional: ['outerwear'],
+    formality: { min: 1, max: 2 },
+    // Only the dedicated kit. Allowing general sportswear here let running
+    // shoes and joggers outscore the cleats and bibs, which is not what anyone
+    // means by "I'm going cycling".
+    styles: ['cycling'],
+    note: 'on the bike — jersey, bibs, cleats',
+  },
   university: {
     label: 'University',
     required: ['top', 'bottom', 'shoes'],
@@ -68,7 +79,8 @@ const KEYWORDS = [
   [['uni', 'university', 'lecture', 'class', 'campus', 'exam', 'study', 'library', 'jku', 'school', 'course'], 'university'],
   [['dinner', 'date', 'restaurant', 'drinks', 'bar', 'party', 'birthday', 'concert', 'theatre', 'cinema'], 'dinner'],
   [['interview', 'formal', 'wedding', 'ceremony', 'presentation', 'defence', 'defense', 'conference', 'meeting'], 'formal'],
-  [['hike', 'walk', 'mountain', 'forest', 'park', 'outdoor', 'bike', 'cycling', 'donau', 'danube'], 'outdoors'],
+  [['bike', 'biking', 'cycl', 'ride', 'rennrad', 'mtb', 'gravel', 'road bike'], 'cycling'],
+  [['hike', 'walk', 'mountain', 'forest', 'park', 'outdoor', 'donau', 'danube'], 'outdoors'],
   [['home', 'inside', 'indoors', 'nothing', 'relax', 'chill', 'couch'], 'home'],
   [['shop', 'city', 'town', 'coffee', 'cafe', 'friend', 'market', 'errand', 'groceries'], 'casual-out'],
 ];
@@ -92,5 +104,5 @@ export function resolveOccasion(input) {
 }
 
 export const QUICK_PICKS = [
-  'University', 'Gym', 'Dinner', 'A walk', 'Coffee with friends', 'Interview', 'Staying in',
+  'University', 'Gym', 'Cycling', 'Dinner', 'A walk', 'Coffee with friends', 'Interview', 'Staying in',
 ];

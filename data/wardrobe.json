@@ -185,7 +185,7 @@
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "cycling"
   },
   {
    "id": "item-9090",
@@ -198,7 +198,7 @@
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "cycling"
   },
   {
    "id": "item-9093",
@@ -614,7 +614,7 @@
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "cycling"
   },
   {
    "id": "item-9055",
@@ -941,7 +941,7 @@
    "pattern": "solid",
    "warmth": 3,
    "formality": 1,
-   "style": "sporty",
+   "style": "cycling",
    "waterproof": true
   },
   {
@@ -1166,7 +1166,7 @@
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "sporty"
+   "style": "cycling"
   },
   {
    "id": "item-9118",
@@ -1179,7 +1179,7 @@
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "sporty"
+   "style": "cycling"
   },
   {
    "id": "item-9119",
@@ -1192,7 +1192,7 @@
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "sporty"
+   "style": "cycling"
   },
   {
    "id": "item-9120",

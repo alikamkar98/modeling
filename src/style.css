@@ -135,6 +135,14 @@ main { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
 }
 .outfit__figure svg { max-width: 100%; height: auto; }
 
+/* The figure: a drawn body with photographed garments laid over it. */
+.figure { position: relative; width: 100%; max-width: 190px; margin: 0 auto; }
+.figure__body { position: absolute; inset: 0; width: 100%; height: 100%; }
+.figure__garment {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+}
+
 .outfit__rank { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
 .outfit__why { margin: 4px 0 14px; font-size: 0.95rem; color: var(--ink-soft); }
 .outfit__warn { color: var(--warn); font-size: 0.9rem; margin: 0 0 12px; }
@@ -146,7 +154,7 @@ main { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
   background: var(--surface-2); border: 1px solid var(--line);
   display: flex; align-items: center; justify-content: center;
 }
-.item__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.item__thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .item__swatch { width: 100%; height: 100%; }
 .item__name { font-size: 0.78rem; color: var(--ink-soft); margin-top: 6px; line-height: 1.3; }
 
@@ -162,7 +170,7 @@ main { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
 }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .card__media { aspect-ratio: 1; background: var(--surface-2); }
-.card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card__media img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .card__body { padding: 8px 10px 10px; }
 .card__name { font-size: 0.85rem; }
 .card__meta { font-size: 0.75rem; color: var(--ink-soft); margin-top: 2px; }

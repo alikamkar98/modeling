@@ -1,7 +1,7 @@
 import { fetchWeather, manualWeather, requirementsFrom, LINZ } from './weather.js';
 import { resolveOccasion, QUICK_PICKS, OCCASIONS } from './occasions.js';
 import { suggestOutfits } from './outfits.js';
-import { renderFigure } from './figure.js';
+import { renderFigure, dressFigure } from './figure.js';
 import { retiredIds, toggleRetired, activeItems } from './retired.js';
 
 const state = {
@@ -85,7 +85,7 @@ function outfitCard(outfit, index) {
   const items = outfit.items;
   return `
     <article class="outfit">
-      <div class="outfit__figure">${renderFigure(items, { width: 150, height: 225 })}</div>
+      <div class="outfit__figure" data-outfit="${index}">${renderFigure(items, { width: 150, height: 225 })}</div>
       <div>
         <p class="outfit__rank">${index === 0 ? 'Best match' : `Option ${index + 1}`}</p>
         <p class="outfit__why">${outfit.rationale.join(' · ')}</p>
@@ -147,6 +147,13 @@ function suggest(destination) {
   }
 
   results.innerHTML = header + retiredNote + result.outfits.map(outfitCard).join('');
+
+  // Cut-outs are computed from the photos in the browser, so dress each figure
+  // after the cards are on screen rather than blocking the result on them.
+  results.querySelectorAll('[data-outfit]').forEach((host) => {
+    const outfit = result.outfits[Number(host.dataset.outfit)];
+    dressFigure(host.querySelector('.figure'), outfit.items);
+  });
 }
 
 /* -------------------------------------------------------------- closet -- */
