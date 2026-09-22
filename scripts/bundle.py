@@ -18,7 +18,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 # Dependency order: each module may only use names defined above it, because
 # concatenation replaces the import graph.
-ORDER = ['color.js', 'occasions.js', 'weather.js', 'cutout.js', 'collage.js',
+ORDER = ['color.js', 'occasions.js', 'weather.js', 'collage.js',
          'retired.js', 'outfits.js', 'app.js']
 
 
@@ -44,8 +44,12 @@ def build():
 
     wardrobe = json.loads((ROOT / 'data' / 'wardrobe.json').read_text())
     for item in wardrobe['items']:
-        photo = ROOT / item['image']
-        item['image'] = 'data:image/jpeg;base64,' + base64.b64encode(photo.read_bytes()).decode()
+        cut = ROOT / item['cutout']
+        data_uri = 'data:image/webp;base64,' + base64.b64encode(cut.read_bytes()).decode()
+        item['cutout'] = data_uri
+        # The photograph is only a fallback, and the cut-out is derived from it;
+        # shipping both would double the file for no visible gain.
+        item['image'] = data_uri
 
     # The catalog ships inside the page, so there is nothing to fetch.
     js = re.sub(

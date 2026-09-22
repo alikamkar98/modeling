@@ -13,10 +13,11 @@ const STYLE_DISTANCE = {
 };
 
 const WEIGHTS = {
-  harmony: 0.32,
-  contrast: 0.22,
-  style: 0.26,
-  weather: 0.20,
+  harmony: 0.26,
+  contrast: 0.16,
+  style: 0.22,
+  proportion: 0.18,
+  weather: 0.18,
 };
 
 /** Items that can fill a given slot. */
@@ -65,6 +66,33 @@ function itemFit(item, profile, req) {
   score -= Math.abs(item.formality - mid) * 0.06;
 
   return Math.max(0.05, score);
+}
+
+// A relaxed leg needs a shoe with some visual weight under it. Put a thin
+// dress shoe below baggy jeans and the proportions collapse — the outfit reads
+// as two people's clothes. This is the single most common way a set that
+// scores well on colour still looks wrong.
+const LOOSE_FITS = new Set(['baggy', 'wide', 'relaxed']);
+
+function proportionScore(items) {
+  const bottom = items.find((i) => i.category === 'bottom');
+  const shoe = items.find((i) => i.category === 'shoes');
+  if (!bottom || !shoe) return { score: 1, reasons: [] };
+
+  if (LOOSE_FITS.has(bottom.fit) && shoe.dressy) {
+    return {
+      score: 0.15,
+      clash: true,
+      reasons: [`${shoe.name} is too dressy under a ${bottom.fit} leg`],
+    };
+  }
+  // The mirror image: a dress shoe is what a tailored leg is cut for, so a
+  // slim or wide tailored trouser with a chunky trainer is merely a miss, not
+  // a clash.
+  if (bottom.fit === 'slim' && shoe.dressy) {
+    return { score: 1, reasons: ['tailored leg over a clean shoe'] };
+  }
+  return { score: 1, reasons: [] };
 }
 
 /** Style coherence across a finished set. */
@@ -148,17 +176,19 @@ function scoreOutfit(items, profile, req) {
   const harmony = harmonyOf(hexes);
   const contrast = contrastOf(hexes);
   const style = styleScore(items);
+  const proportion = proportionScore(items);
   const weather = weatherScore(items, profile, req);
 
   const total =
     harmony.score * WEIGHTS.harmony +
     contrast.score * WEIGHTS.contrast +
     style.score * WEIGHTS.style +
+    proportion.score * WEIGHTS.proportion +
     weather.score * WEIGHTS.weather;
 
   return {
     total,
-    parts: { harmony, contrast, style, weather },
+    parts: { harmony, contrast, style, proportion, weather },
     warnings: weather.warnings,
     // The scheme name already says what harmony.reasons would repeat, so only
     // one of the two goes in.
@@ -166,6 +196,7 @@ function scoreOutfit(items, profile, req) {
       harmony.scheme,
       ...contrast.reasons.slice(0, 1),
       ...style.reasons.slice(0, 1),
+      ...proportion.reasons.slice(0, 1),
       ...weather.reasons.slice(0, 1),
     ].filter(Boolean),
   };
@@ -223,9 +254,16 @@ export function suggestOutfits(wardrobe, occasionKey, weatherRequirements, { cou
     return { ok: false, reason: missing.join('; '), missing, occasion: profile };
   }
 
-  const combos = cartesian(pools)
+  const scored = cartesian(pools)
     .map((items) => ({ items, ...scoreOutfit(items, profile, req) }))
     .sort((a, b) => b.total - a.total);
+
+  // A proportion clash is not a matter of degree. Scored as a penalty it still
+  // surfaced — there are only so many shoes that suit a formal occasion — so
+  // these are removed outright, unless removing them would leave nothing, in
+  // which case a flawed outfit beats no answer at all.
+  const clean = scored.filter((c) => !c.parts.proportion.clash);
+  const combos = clean.length ? clean : scored;
 
   // Variety matters more than squeezing out the last points: three outfits
   // that differ only in socks is not three suggestions.

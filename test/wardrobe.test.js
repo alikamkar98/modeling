@@ -192,15 +192,49 @@ test('every garment carries measured colour data', () => {
   }
 });
 
-test('every garment says whether it can be cut out', () => {
-  // The collage only attempts background removal where this is true; a missing
-  // flag would silently send a shredded cut-out to the screen.
-  for (const item of W) {
-    assert.equal(typeof item.cutoutOk, 'boolean', `${item.id} has no cutoutOk`);
-    assert.equal(typeof item.floorDistance, 'number', `${item.id} has no floorDistance`);
-    assert.equal(item.cutoutOk, item.floorDistance >= 250,
-      `${item.id}: cutoutOk disagrees with its own measurement`);
+
+test('a dress shoe is never put under a baggy leg', () => {
+  // The complaint that produced this rule: brown suede sneakers suggested with
+  // wide-leg jeans. Colour harmony was fine; the proportions were not.
+  const loose = new Set(['baggy', 'wide', 'relaxed']);
+  for (const key of ['university', 'casual-out', 'dinner']) {
+    for (const t of [6, 16, 24]) {
+      const r = suggestOutfits(W, key, weather(t), { count: 12 });
+      if (!r.ok) continue;
+      for (const outfit of r.outfits) {
+        const bottom = outfit.items.find((i) => i.category === 'bottom');
+        const shoe = outfit.items.find((i) => i.category === 'shoes');
+        if (!bottom || !shoe) continue;
+        assert.ok(!(loose.has(bottom.fit) && shoe.dressy),
+          `${key} @${t}C paired ${shoe.name} with ${bottom.fit} ${bottom.name}`);
+      }
+    }
   }
-  // If this ever hits zero the collage has quietly become a photo grid.
-  assert.ok(W.filter((i) => i.cutoutOk).length > 40, 'too few garments cut out cleanly');
+});
+
+test('bottoms record their cut and shoes record whether they are dressy', () => {
+  for (const item of W) {
+    if (item.category === 'bottom') {
+      assert.ok(['slim', 'regular', 'relaxed', 'baggy', 'wide'].includes(item.fit),
+        `${item.name} has no usable fit`);
+    }
+    if (item.category === 'shoes') {
+      assert.equal(typeof item.dressy, 'boolean', `${item.name} has no dressy flag`);
+    }
+  }
+});
+
+test('every garment has a pre-made cut-out', () => {
+  // The collage shows cut-outs, not photographs. A missing one silently falls
+  // back to the photo and puts a slab of floor in the composition.
+  for (const item of W) {
+    assert.ok(item.cutout?.startsWith('assets/cutouts/'), `${item.name} has no cut-out`);
+  }
+});
+
+test('the base layer is not filed as trousers', () => {
+  const t = W.find((i) => i.id === 'item-9093');
+  assert.match(t.name, /base.layer/i);
+  assert.equal(t.style, 'sporty');
+  assert.equal(t.formality, 1);
 });

@@ -9,31 +9,32 @@
 // Layouts are chosen by which slots the outfit actually fills, so a three-piece
 // look isn't laid out with a hole where the jacket would have been.
 
-import { cutout } from './cutout.js';
-
 // Boxes are percentages of the frame: [left, top, width, height].
-// They deliberately overlap a little — touching pieces read as one outfit,
-// evenly spaced ones read as a catalogue page.
+//
+// Nothing overlaps. Pieces stacked on top of one another hide exactly the
+// detail you are trying to judge — a collar, a hem, the shape of a shoe — so
+// each garment gets its own clear area, sized by how much of the look it
+// carries: the bottom runs tall, shoes take the smallest corner.
 const LAYOUTS = {
   'outerwear,top,bottom,shoes': {
-    outerwear: [2, 4, 46, 44],
-    top: [50, 10, 40, 34],
-    bottom: [10, 44, 42, 50],
-    shoes: [54, 60, 38, 30],
+    outerwear: [3, 3, 45, 45],
+    top: [52, 3, 45, 45],
+    bottom: [52, 52, 45, 45],
+    shoes: [3, 52, 45, 45],
   },
   'top,bottom,shoes': {
-    top: [6, 4, 50, 42],
-    bottom: [46, 26, 46, 54],
-    shoes: [8, 60, 38, 32],
+    top: [4, 3, 52, 46],
+    bottom: [59, 3, 37, 66],
+    shoes: [4, 53, 44, 44],
   },
   'outerwear,top,bottom': {
-    outerwear: [2, 6, 46, 46],
-    top: [52, 8, 42, 36],
-    bottom: [24, 48, 50, 48],
+    outerwear: [3, 3, 45, 49],
+    top: [52, 3, 45, 45],
+    bottom: [22, 55, 56, 42],
   },
   'top,bottom': {
-    top: [10, 4, 52, 44],
-    bottom: [34, 42, 50, 54],
+    top: [5, 8, 44, 40],
+    bottom: [53, 5, 42, 88],
   },
 };
 
@@ -53,12 +54,10 @@ export function renderCollage(items, { id = '' } = {}) {
 /**
  * Fill a collage element with the cut-out garments.
  *
- * Async because the cut-outs are computed from the photographs in the browser.
- * A garment whose cut-out fails is drawn from its original photo instead —
- * better a visible garment with a bit of floor behind it than a gap in the
- * composition.
+ * The cut-outs are pre-made, so this is synchronous — the composition appears
+ * with the card rather than filling in afterwards.
  */
-export async function composeCollage(el, items) {
+export function composeCollage(el, items) {
   if (!el) return;
   const layout = layoutFor(items);
   el.innerHTML = '';
@@ -68,28 +67,16 @@ export async function composeCollage(el, items) {
   const wearable = items.filter((i) => SLOT_ORDER.includes(i.category));
   const boxes = layout
     ? wearable.map((i) => [i, layout[i.category]])
-    : wearable.map((i, n) => [i, [4 + n * (92 / wearable.length), 20, 92 / wearable.length - 4, 56]]);
+    : wearable.map((i, n) => [i, [4 + n * (92 / wearable.length), 24, 92 / wearable.length - 5, 52]]);
 
   for (const [item, box] of boxes) {
     if (!box) continue;
 
-    // Only garments that separate cleanly from the floor get cut out; the rest
-    // are shown as photographs. See scripts/check_cutouts.py — a cream shirt on
-    // pale wood cannot be segmented by colour, and a shredded cut-out looks far
-    // worse than an honest photo.
-    let piece = null;
-    if (item.cutoutOk) {
-      try {
-        piece = await cutout(item.image);
-      } catch (err) {
-        console.warn(`cut-out failed for ${item.name}`, err);
-      }
-    }
-
     const img = document.createElement('img');
-    img.className = `collage__piece collage__piece--${item.category}`
-      + (piece ? '' : ' collage__piece--photo');
-    img.src = piece ? piece.url : item.image;
+    img.className = `collage__piece collage__piece--${item.category}`;
+    // Cut out offline by scripts/make_cutouts.py; the photograph is only a
+    // fallback for a garment that somehow has none.
+    img.src = item.cutout || item.image;
     img.alt = item.name;
     img.loading = 'lazy';
     const [left, top, width, height] = box;

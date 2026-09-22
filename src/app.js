@@ -85,7 +85,8 @@ function renderWeather() {
 /* ------------------------------------------------------------- results -- */
 
 function thumb(item) {
-  if (item.image) return `<img src="${item.image}" alt="${item.name}" loading="lazy">`;
+  const src = item.cutout || item.image;
+  if (src) return `<img src="${src}" alt="${item.name}" loading="lazy">`;
   return `<span class="item__swatch" style="background:${item.hex}"></span>`;
 }
 
