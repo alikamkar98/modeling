@@ -29,22 +29,25 @@ function candidatesFor(slot, wardrobe) {
  * it will be worn with. Returns null when the item is disqualified outright.
  */
 function itemFit(item, profile, req) {
-  if (item.formality < profile.formality.min - 1) return null;
-  if (item.formality > profile.formality.max + 1) return null;
+  // Formality is a hard boundary, not a preference. Slack here is what puts a
+  // polo shirt in a job-interview outfit, so there is none: if the occasion
+  // calls for 4-5, a 3 is simply the wrong garment.
+  if (item.formality < profile.formality.min) return null;
+  if (item.formality > profile.formality.max) return null;
 
-  if (profile.styles.length && item.style && !profile.styles.includes(item.style)) {
-    // A style outside the occasion's families is allowed only if it is a
-    // neighbour — sporty shoes with a casual outfit, not with a suit.
-    const wanted = Math.max(...profile.styles.map((s) => STYLE_DISTANCE[s] ?? 2));
-    if (Math.abs((STYLE_DISTANCE[item.style] ?? 2) - wanted) > 1) return null;
-  }
+  // Same for style family. Allowing "neighbouring" families sounds reasonable
+  // and in practice puts work dungarees in a gym outfit, because casual sits
+  // one step from sporty. An occasion lists the families that belong to it.
+  if (profile.styles.length && item.style && !profile.styles.includes(item.style)) return null;
 
   let score = 1;
 
   if (!profile.ignoreWeather && req) {
     // Too warm for today disqualifies an item outright: a parka at 28 degrees
-    // is not a matter of taste.
-    if (item.warmth > req.warmth.max + 1) return null;
+    // is not a matter of taste. Shoes are the exception — leather boots in
+    // summer are merely warm, not absurd, and rejecting them outright leaves
+    // a formal outfit with nothing on its feet.
+    if (item.category !== 'shoes' && item.warmth > req.warmth.max + 1) return null;
 
     // Too *thin*, though, does not. Cold is answered by layering, so a cotton
     // shirt is perfectly valid at -2 once a coat goes over it. Only the
@@ -186,10 +189,15 @@ export function suggestOutfits(wardrobe, occasionKey, weatherRequirements, { cou
   const slots = [...profile.required];
   const req = weatherRequirements;
 
-  // Cold or wet weather promotes outerwear from optional to required.
+  // Cold or wet weather calls for an outer layer. It is *wanted*, not
+  // required: if nothing suitable exists — no raincoat light enough for a warm
+  // downpour — the right answer is the rest of the outfit plus a warning, not
+  // a refusal to dress the user at all.
+  const wanted = new Set();
   if (!profile.ignoreWeather && req && (req.warmth.min >= 4 || req.needsRainProtection || req.needsWindLayer)
       && profile.optional.includes('outerwear')) {
     slots.push('outerwear');
+    wanted.add('outerwear');
   }
 
   const missing = [];
@@ -201,6 +209,7 @@ export function suggestOutfits(wardrobe, occasionKey, weatherRequirements, { cou
       .sort((a, b) => b.fit - a.fit);
 
     if (!scored.length) {
+      if (wanted.has(slot)) continue;   // nice to have, not a blocker
       const owned = candidatesFor(slot, wardrobe).length;
       missing.push(owned === 0 ? `no ${slot} in your wardrobe` : `no ${slot} suitable for ${profile.label.toLowerCase()} in this weather`);
       continue;

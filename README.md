@@ -19,20 +19,20 @@ python3 -m http.server 8000
 Opening `index.html` directly from the filesystem won't work — ES modules and
 `fetch` need a real origin. Any static server will do.
 
-## Your photos stay on your device
+## Your wardrobe
 
-The repository holds classifications, not pictures. On first use, open **My
-clothes → Add photos from this device** and pick your garment photos; the app
-keeps them in the browser's IndexedDB and matches them to catalog entries by
-filename. Nothing is uploaded and nothing is committed.
+105 garments, classified from photos in the `clothes` Google Drive folder. The
+photos ship with the app (downscaled to ~500px, 2.7 MB in total), so it works on
+any device with no setup and no login.
 
-The trade-off: browser storage is per-device, so opening the app on a different
-device means picking the photos again there. HEIC works as-is in Safari, so
-photos straight from an iPhone or iPad need no conversion.
+Each garment's `hex` was sampled from its own photo — the median colour of the
+centre region, discarding near-white and near-black pixels so the floor and the
+shadows don't win. The engine needs a real colour value: the *name* of a colour
+can't tell you whether two navies contrast or merely fail to match.
 
-Until your wardrobe is classified, the app shows a placeholder set so the
-interface is explorable. It says so in **My clothes** — those aren't your
-clothes.
+**One gap:** there is no swimwear among the photos, so the Swimming occasion
+reports that rather than improvising something. Photograph a pair of swim shorts
+and it fills in.
 
 ## How a suggestion is made
 
@@ -75,8 +75,11 @@ suggestions.
 node --test "test/*.test.js"
 ```
 
-Covers the colour maths against known pairs, weather-to-requirement mapping,
-destination parsing, and the core guarantee: across every occasion and a −5 °C
+29 tests. They cover the colour maths against known pairs, weather-to-requirement
+mapping, destination parsing, regressions against the real catalog (gym outfits
+contain only sportswear; formal outfits never drop below the occasion's
+formality; a warm downpour still produces an outfit rather than failing), and the
+core guarantee: across every occasion and a −5 °C
 to 32 °C sweep, wet and dry, every returned outfit fills its required slots,
 uses only real items, never repeats one, and a request that can't be filled
 names what's missing instead of returning nothing.
@@ -96,6 +99,6 @@ See [`scripts/ingest.md`](scripts/ingest.md).
 | `src/weather.js` | Linz conditions, with a manual fallback |
 | `src/occasions.js` | Destination → slots and formality |
 | `src/figure.js` | SVG figure renderer |
-| `src/photos.js` | On-device photo storage |
-| `data/wardrobe.json` | Your classified wardrobe |
-| `data/demo-wardrobe.json` | Placeholders for exploring the UI |
+| `data/wardrobe.json` | Your classified wardrobe (105 items) |
+| `data/demo-wardrobe.json` | Placeholders, used only if the catalog is empty |
+| `assets/items/` | Garment photos |

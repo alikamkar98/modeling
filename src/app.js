@@ -2,13 +2,11 @@ import { fetchWeather, manualWeather, requirementsFrom, LINZ } from './weather.j
 import { resolveOccasion, QUICK_PICKS, OCCASIONS } from './occasions.js';
 import { suggestOutfits } from './outfits.js';
 import { renderFigure } from './figure.js';
-import { loadPhotoUrls, storePhotos } from './photos.js';
 
 const state = {
   wardrobe: [],
   isDemo: false,
   weather: null,
-  photos: new Map(),
   lastDestination: '',
   closetFilter: 'all',
 };
@@ -78,8 +76,7 @@ function renderWeather() {
 /* ------------------------------------------------------------- results -- */
 
 function thumb(item) {
-  const url = item.file ? state.photos.get(item.file) : null;
-  if (url) return `<img src="${url}" alt="${item.name}" loading="lazy">`;
+  if (item.image) return `<img src="${item.image}" alt="${item.name}" loading="lazy">`;
   return `<span class="item__swatch" style="background:${item.hex}"></span>`;
 }
 
@@ -153,10 +150,9 @@ function renderCloset() {
     return;
   }
 
-  const withPhotos = state.wardrobe.filter((i) => i.file && state.photos.has(i.file)).length;
   status.textContent = state.isDemo
-    ? 'Showing placeholder clothes — these are not yours. Your real wardrobe replaces them once it is classified.'
-    : `${state.wardrobe.length} items · ${withPhotos} with photos on this device`;
+    ? 'Showing placeholder clothes — these are not yours.'
+    : `${state.wardrobe.length} items in your wardrobe`;
 
   const cats = ['all', ...new Set(state.wardrobe.map((i) => i.category))];
   $('#closet-filters').innerHTML = cats
@@ -213,28 +209,13 @@ function wireAsk() {
   });
 }
 
-function wirePhotoInput() {
-  $('#photo-input').addEventListener('change', async (e) => {
-    const files = [...e.target.files];
-    if (!files.length) return;
-    $('#closet-status').textContent = `Saving ${files.length} photos…`;
-    await storePhotos(files);
-    state.photos = await loadPhotoUrls();
-    renderCloset();
-    if (state.lastDestination) suggest(state.lastDestination);
-    e.target.value = '';
-  });
-}
-
 async function init() {
   wireTabs();
   wireAsk();
-  wirePhotoInput();
 
-  const [{ items, isDemo }, photos] = await Promise.all([loadWardrobe(), loadPhotoUrls()]);
+  const { items, isDemo } = await loadWardrobe();
   state.wardrobe = items;
   state.isDemo = isDemo;
-  state.photos = photos;
   renderCloset();
 
   try {
