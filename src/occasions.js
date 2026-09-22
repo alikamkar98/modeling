@@ -2,16 +2,6 @@
 // result should be. Warmth is not decided here — that comes from the weather.
 
 export const OCCASIONS = {
-  swimming: {
-    label: 'Swimming',
-    required: ['swimwear'],
-    optional: ['top', 'bottom', 'shoes', 'accessory'],
-    formality: { min: 1, max: 2 },
-    styles: ['sporty', 'casual'],
-    // Poolside: the weather outside shouldn't force a winter coat into the set.
-    ignoreWeather: true,
-    note: 'swim kit plus something to get there in',
-  },
   sport: {
     label: 'Sport / gym',
     required: ['top', 'bottom', 'shoes'],
@@ -74,7 +64,6 @@ export const OCCASIONS = {
 // Free text maps onto an occasion by keyword. Deliberately generous: it is
 // better to recognise "lecture" than to make the user learn our vocabulary.
 const KEYWORDS = [
-  [['swim', 'pool', 'beach', 'lake', 'sauna', 'bad ', 'baden'], 'swimming'],
   [['gym', 'sport', 'run', 'jog', 'train', 'workout', 'football', 'fitness', 'climb', 'tennis'], 'sport'],
   [['uni', 'university', 'lecture', 'class', 'campus', 'exam', 'study', 'library', 'jku', 'school', 'course'], 'university'],
   [['dinner', 'date', 'restaurant', 'drinks', 'bar', 'party', 'birthday', 'concert', 'theatre', 'cinema'], 'dinner'],
@@ -103,5 +92,5 @@ export function resolveOccasion(input) {
 }
 
 export const QUICK_PICKS = [
-  'University', 'Gym', 'Swimming', 'Dinner', 'A walk', 'Coffee with friends', 'Interview', 'Staying in',
+  'University', 'Gym', 'Dinner', 'A walk', 'Coffee with friends', 'Interview', 'Staying in',
 ];

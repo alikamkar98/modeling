@@ -2,6 +2,7 @@ import { fetchWeather, manualWeather, requirementsFrom, LINZ } from './weather.j
 import { resolveOccasion, QUICK_PICKS, OCCASIONS } from './occasions.js';
 import { suggestOutfits } from './outfits.js';
 import { renderFigure } from './figure.js';
+import { retiredIds, toggleRetired, activeItems } from './retired.js';
 
 const state = {
   wardrobe: [],
@@ -119,15 +120,21 @@ function suggest(destination) {
   const { key, confident } = resolveOccasion(destination);
   const profile = OCCASIONS[key];
   const req = state.weather ? requirementsFrom(state.weather) : null;
-  const result = suggestOutfits(state.wardrobe, key, req);
+  const available = activeItems(state.wardrobe);
+  const result = suggestOutfits(available, key, req);
 
   const header = confident
     ? `<p class="muted">${profile.label} — ${profile.note}</p>`
     : `<p class="muted">I don't recognise “${destination}”, so I've treated it as everyday wear.
        Try one of the buttons above if that's wrong.</p>`;
 
+  const retiredCount = state.wardrobe.length - available.length;
+  const retiredNote = retiredCount
+    ? `<p class="muted">${retiredCount} retired item${retiredCount === 1 ? '' : 's'} left out — bring them back under My clothes.</p>`
+    : '';
+
   if (!result.ok) {
-    results.innerHTML = `${header}
+    results.innerHTML = `${header}${retiredNote}
       <div class="notice">
         <strong>I can't put a full outfit together for that.</strong>
         <ul>${result.missing.map((m) => `<li>${m}</li>`).join('')}</ul>
@@ -135,7 +142,7 @@ function suggest(destination) {
     return;
   }
 
-  results.innerHTML = header + result.outfits.map(outfitCard).join('');
+  results.innerHTML = header + retiredNote + result.outfits.map(outfitCard).join('');
 }
 
 /* -------------------------------------------------------------- closet -- */
@@ -166,14 +173,26 @@ function renderCloset() {
     ? state.wardrobe
     : state.wardrobe.filter((i) => i.category === state.closetFilter);
 
+  const retired = retiredIds();
   grid.innerHTML = shown.map((i) => `
-    <div class="card">
+    <div class="card${retired.has(i.id) ? ' card--retired' : ''}">
       <div class="card__media">${thumb(i)}</div>
       <div class="card__body">
         <div class="card__name">${i.name}</div>
         <div class="card__meta">${i.category} · warmth ${i.warmth} · ${i.style ?? '—'}</div>
+        <button class="card__retire" data-retire="${i.id}">
+          ${retired.has(i.id) ? 'Bring back' : 'Never suggest'}
+        </button>
       </div>
     </div>`).join('');
+
+  grid.querySelectorAll('[data-retire]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      toggleRetired(btn.dataset.retire);
+      renderCloset();
+      if (state.lastDestination) suggest(state.lastDestination);
+    });
+  });
 }
 
 /* ---------------------------------------------------------------- init -- */

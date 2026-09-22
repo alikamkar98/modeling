@@ -19,6 +19,23 @@ python3 -m http.server 8000
 Opening `index.html` directly from the filesystem won't work — ES modules and
 `fetch` need a real origin. Any static server will do.
 
+### The published single-file build
+
+```bash
+python3 scripts/bundle.py            # -> dist/wardrobe.html
+```
+
+This inlines the CSS, concatenates the modules, embeds the catalog and encodes
+every photo as a data URI, producing one ~3.5 MB file for publishing as a
+claude.ai artifact. That sandbox blocks all outbound requests, so **the live
+weather call cannot work there** — the page falls back to a manual
+cold/cool/mild/warm/hot control and says so. Served from anywhere else (locally,
+GitHub Pages) the live forecast works normally.
+
+`scripts/bundle.py` fails loudly if a module in `src/` is missing from its
+`ORDER` list: concatenation replaces the import graph, so an omitted file
+produces a page that throws on load with no other symptom.
+
 ## Your wardrobe
 
 105 garments, classified from photos in the `clothes` Google Drive folder. The
@@ -30,9 +47,14 @@ centre region, discarding near-white and near-black pixels so the floor and the
 shadows don't win. The engine needs a real colour value: the *name* of a colour
 can't tell you whether two navies contrast or merely fail to match.
 
-**One gap:** there is no swimwear among the photos, so the Swimming occasion
-reports that rather than improvising something. Photograph a pair of swim shorts
-and it fills in.
+There is no swimwear among the photos, so the Swimming occasion was removed
+rather than left as an option that could never be filled. Photograph swim shorts,
+re-ingest, and add it back.
+
+**Retiring clothes.** Anything you own but don't want suggested gets a *Never
+suggest* button in **My clothes**. That's a preference, not a fact about the
+garment, so it lives in `localStorage` per device — a re-ingest of the photos
+can never wipe it, and it never has to be in the catalog.
 
 ## How a suggestion is made
 

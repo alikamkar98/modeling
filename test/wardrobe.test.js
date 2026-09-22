@@ -98,20 +98,36 @@ test('socks are catalogued but never fill an outfit slot', () => {
   }
 });
 
-test('every occasion except swimming can be dressed across the whole year', () => {
-  // Swimming is the one real gap: there is no swimwear among the 105 photos,
-  // and the engine says so rather than improvising.
+test('every occasion can be dressed across the whole year', () => {
   for (const key of Object.keys(OCCASIONS)) {
     for (const t of [-5, 0, 8, 15, 22, 32]) {
       for (const wet of [false, true]) {
         const r = suggestOutfits(W, key, weather(t, wet));
-        if (key === 'swimming') {
-          assert.equal(r.ok, false);
-          assert.match(r.reason, /swimwear/);
-          continue;
-        }
         assert.equal(r.ok, true, `${key} @${t}C wet=${wet}: ${r.reason}`);
       }
     }
+  }
+});
+
+test('Swimming is gone, since there is no swimwear to fill it', () => {
+  assert.ok(!('swimming' in OCCASIONS));
+  assert.ok(!W.some((i) => i.category === 'swimwear'));
+});
+
+test('retiring an item keeps it out of every suggestion', () => {
+  // The toggle only matters if the engine actually stops picking the item, so
+  // this checks the filtered wardrobe rather than the storage helper.
+  const req = weather(15);
+  const before = suggestOutfits(W, 'university', req);
+  assert.equal(before.ok, true);
+
+  const picked = before.outfits[0].items.find((i) => i.category === 'top');
+  const remaining = W.filter((i) => i.id !== picked.id);
+  const after = suggestOutfits(remaining, 'university', req);
+
+  assert.equal(after.ok, true);
+  for (const outfit of after.outfits) {
+    assert.ok(!outfit.items.some((i) => i.id === picked.id),
+      `${picked.name} was retired but still suggested`);
   }
 });

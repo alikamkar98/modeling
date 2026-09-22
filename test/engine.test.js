@@ -94,7 +94,6 @@ test('weather URL targets Linz and asks for feels-like', () => {
 test('destinations map to occasions, unknown text is flagged', () => {
   assert.equal(resolveOccasion('university').key, 'university');
   assert.equal(resolveOccasion('going to the JKU library').key, 'university');
-  assert.equal(resolveOccasion('swimming at the lake').key, 'swimming');
   assert.equal(resolveOccasion('gym').key, 'sport');
   assert.equal(resolveOccasion('job interview').key, 'formal');
 
@@ -144,11 +143,11 @@ test('every occasion returns valid, complete, non-repeating outfits across the w
 });
 
 test('an unfillable request names what is missing instead of failing silently', () => {
-  const noSwimwear = WARDROBE.filter((i) => i.category !== 'swimwear');
-  const req = requirementsFrom({ feelsLike: 25, precipitationProbability: 0, precipitation: 0, windSpeed: 2, code: 0 });
-  const result = suggestOutfits(noSwimwear, 'swimming', req);
+  const noShoes = WARDROBE.filter((i) => i.category !== 'shoes');
+  const req = requirementsFrom({ feelsLike: 15, precipitationProbability: 0, precipitation: 0, windSpeed: 2, code: 0 });
+  const result = suggestOutfits(noShoes, 'university', req);
   assert.equal(result.ok, false);
-  assert.match(result.reason, /swimwear/);
+  assert.match(result.reason, /shoes/);
 });
 
 test('unknown occasion is rejected cleanly', () => {

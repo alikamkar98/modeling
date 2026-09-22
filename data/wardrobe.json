@@ -34,12 +34,12 @@
    "id": "item-9028",
    "file": "IMG_9028.jpg",
    "image": "assets/items/IMG_9028.jpg",
-   "name": "black insulated bib overalls",
+   "name": "black bib overalls",
    "category": "bottom",
    "subtype": "dungarees",
    "hex": "#1b1e2b",
    "pattern": "solid",
-   "warmth": 5,
+   "warmth": 4,
    "formality": 1,
    "style": "outdoor",
    "waterproof": true
@@ -308,7 +308,7 @@
    "id": "item-9040",
    "file": "IMG_9040.jpg",
    "image": "assets/items/IMG_9040.jpg",
-   "name": "navy t-shirt",
+   "name": "navy hooded t-shirt",
    "category": "top",
    "subtype": "t-shirt",
    "hex": "#1a2a55",
@@ -646,14 +646,14 @@
    "id": "item-9058_2",
    "file": "IMG_9058_2.jpg",
    "image": "assets/items/IMG_9058_2.jpg",
-   "name": "navy knit vest",
+   "name": "navy sleeveless top",
    "category": "top",
-   "subtype": "knit vest",
+   "subtype": "tank top",
    "hex": "#121625",
    "pattern": "solid",
    "warmth": 2,
-   "formality": 3,
-   "style": "smart-casual"
+   "formality": 2,
+   "style": "casual"
   },
   {
    "id": "item-9059_2",
@@ -698,12 +698,12 @@
    "id": "item-9060_2",
    "file": "IMG_9060_2.jpg",
    "image": "assets/items/IMG_9060_2.jpg",
-   "name": "navy shirt",
+   "name": "navy short-sleeve shirt",
    "category": "top",
-   "subtype": "shirt",
+   "subtype": "short-sleeve shirt",
    "hex": "#141825",
    "pattern": "solid",
-   "warmth": 2,
+   "warmth": 1,
    "formality": 3,
    "style": "smart-casual"
   },
@@ -1378,6 +1378,6 @@
  ],
  "skipped": [],
  "gaps": [
-  "No swimwear found in the 105 photos - the Swimming occasion cannot be filled."
+  "No swimwear among the 105 photos; the Swimming occasion was removed rather than left unfillable."
  ]
 }

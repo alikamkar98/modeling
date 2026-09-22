@@ -175,3 +175,13 @@ main { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
 }
 .notice strong { color: var(--ink); }
 .notice ul { margin: 8px 0 0; padding-left: 20px; }
+
+.card--retired { opacity: 0.45; }
+.card--retired .card__media { filter: grayscale(1); }
+.card__retire {
+  margin-top: 8px; width: 100%; min-height: 36px;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--surface-2); color: var(--ink-soft);
+  font: inherit; font-size: 0.75rem; cursor: pointer;
+}
+.card__retire:hover { color: var(--ink); }
