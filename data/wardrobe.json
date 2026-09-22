@@ -11,11 +11,22 @@
    "name": "navy denim dungarees",
    "category": "bottom",
    "subtype": "dungarees",
-   "hex": "#0c162d",
+   "hex": "#111d3a",
    "pattern": "solid",
    "warmth": 3,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#111d3a",
+    "secondary": "#d0c7b5",
+    "secondaryName": "beige",
+    "brightness": 0.147,
+    "saturation": 0.547,
+    "hue": 222,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9027",
@@ -24,11 +35,22 @@
    "name": "tan work dungarees",
    "category": "bottom",
    "subtype": "dungarees",
-   "hex": "#8a6a45",
+   "hex": "#69533a",
    "pattern": "solid",
    "warmth": 3,
    "formality": 2,
-   "style": "outdoor"
+   "style": "outdoor",
+   "color": {
+    "name": "orange",
+    "dominant": "#69533a",
+    "secondary": "#c6cacc",
+    "secondaryName": "light grey",
+    "brightness": 0.32,
+    "saturation": 0.288,
+    "hue": 32,
+    "temperature": "warm",
+    "neutral": false
+   }
   },
   {
    "id": "item-9028",
@@ -37,12 +59,23 @@
    "name": "black bib overalls",
    "category": "bottom",
    "subtype": "dungarees",
-   "hex": "#1b1e2b",
+   "hex": "#1b1e2a",
    "pattern": "solid",
    "warmth": 4,
    "formality": 1,
    "style": "outdoor",
-   "waterproof": true
+   "waterproof": true,
+   "color": {
+    "name": "navy",
+    "dominant": "#1b1e2a",
+    "secondary": "#d0c6b5",
+    "secondaryName": "beige",
+    "brightness": 0.135,
+    "saturation": 0.217,
+    "hue": 228,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9029",
@@ -51,11 +84,22 @@
    "name": "navy joggers",
    "category": "bottom",
    "subtype": "joggers",
-   "hex": "#223461",
+   "hex": "#25396a",
    "pattern": "solid",
    "warmth": 3,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "navy",
+    "dominant": "#25396a",
+    "secondary": "#dccfb8",
+    "secondaryName": "beige",
+    "brightness": 0.28,
+    "saturation": 0.483,
+    "hue": 223,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9030",
@@ -64,11 +108,22 @@
    "name": "blue jeans",
    "category": "bottom",
    "subtype": "jeans",
-   "hex": "#2c4772",
+   "hex": "#25406c",
    "pattern": "solid",
    "warmth": 3,
    "formality": 3,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#25406c",
+    "secondary": "#d1c6b2",
+    "secondaryName": "beige",
+    "brightness": 0.284,
+    "saturation": 0.49,
+    "hue": 217,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9031",
@@ -77,11 +132,22 @@
    "name": "sage sweatpants",
    "category": "bottom",
    "subtype": "joggers",
-   "hex": "#73746d",
+   "hex": "#70706a",
    "pattern": "solid",
    "warmth": 3,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "grey",
+    "dominant": "#70706a",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.427,
+    "saturation": 0.028,
+    "hue": 60,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9032_2",
@@ -90,11 +156,22 @@
    "name": "baggy blue jeans",
    "category": "bottom",
    "subtype": "jeans",
-   "hex": "#243a5f",
+   "hex": "#253d68",
    "pattern": "solid",
    "warmth": 3,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#253d68",
+    "secondary": "#e9dec7",
+    "secondaryName": "beige",
+    "brightness": 0.276,
+    "saturation": 0.475,
+    "hue": 219,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9035",
@@ -103,11 +180,22 @@
    "name": "dark denim shorts",
    "category": "bottom",
    "subtype": "shorts",
-   "hex": "#142244",
+   "hex": "#101e3e",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#101e3e",
+    "secondary": "#e1e1dd",
+    "secondaryName": "white",
+    "brightness": 0.153,
+    "saturation": 0.59,
+    "hue": 222,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9062",
@@ -116,11 +204,22 @@
    "name": "rust chino shorts",
    "category": "bottom",
    "subtype": "shorts",
-   "hex": "#59372b",
+   "hex": "#563529",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "brown",
+    "dominant": "#563529",
+    "secondary": "#d2cfc7",
+    "secondaryName": "white",
+    "brightness": 0.249,
+    "saturation": 0.354,
+    "hue": 16,
+    "temperature": "warm",
+    "neutral": false
+   }
   },
   {
    "id": "item-9065_2",
@@ -129,11 +228,22 @@
    "name": "taupe trousers",
    "category": "bottom",
    "subtype": "trousers",
-   "hex": "#737074",
+   "hex": "#6e6b6c",
    "pattern": "solid",
    "warmth": 2,
    "formality": 4,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#6e6b6c",
+    "secondary": "#c8c4b7",
+    "secondaryName": "light yellow",
+    "brightness": 0.425,
+    "saturation": 0.014,
+    "hue": 340,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9068",
@@ -142,11 +252,22 @@
    "name": "navy wide trousers",
    "category": "bottom",
    "subtype": "trousers",
-   "hex": "#131622",
+   "hex": "#11131f",
    "pattern": "solid",
    "warmth": 3,
    "formality": 4,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#11131f",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.094,
+    "saturation": 0.292,
+    "hue": 231,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9075",
@@ -155,11 +276,22 @@
    "name": "dark brown trousers",
    "category": "bottom",
    "subtype": "trousers",
-   "hex": "#26232c",
+   "hex": "#232028",
    "pattern": "solid",
    "warmth": 3,
    "formality": 4,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "black",
+    "dominant": "#232028",
+    "secondary": "#e5e4de",
+    "secondaryName": "white",
+    "brightness": 0.141,
+    "saturation": 0.111,
+    "hue": 262,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9086",
@@ -168,11 +300,22 @@
    "name": "black sport shorts",
    "category": "bottom",
    "subtype": "shorts",
-   "hex": "#141724",
+   "hex": "#212538",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "navy",
+    "dominant": "#212538",
+    "secondary": "#cfcec8",
+    "secondaryName": "light grey",
+    "brightness": 0.175,
+    "saturation": 0.258,
+    "hue": 230,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9089",
@@ -181,11 +324,22 @@
    "name": "black cycling shorts",
    "category": "bottom",
    "subtype": "shorts",
-   "hex": "#111724",
+   "hex": "#0e121f",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "cycling"
+   "style": "cycling",
+   "color": {
+    "name": "navy",
+    "dominant": "#0e121f",
+    "secondary": "#ccc4b8",
+    "secondaryName": "beige",
+    "brightness": 0.088,
+    "saturation": 0.378,
+    "hue": 226,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9090",
@@ -194,11 +348,22 @@
    "name": "cycling bib shorts",
    "category": "bottom",
    "subtype": "shorts",
-   "hex": "#090d17",
+   "hex": "#b4b3af",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "cycling"
+   "style": "cycling",
+   "color": {
+    "name": "light grey",
+    "dominant": "#b4b3af",
+    "secondary": "#0d111d",
+    "secondaryName": "navy",
+    "brightness": 0.696,
+    "saturation": 0.032,
+    "hue": 48,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9093",
@@ -207,11 +372,22 @@
    "name": "black slim trousers",
    "category": "bottom",
    "subtype": "trousers",
-   "hex": "#070c14",
+   "hex": "#050a13",
    "pattern": "solid",
    "warmth": 3,
    "formality": 4,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#050a13",
+    "secondary": "#e3e3e1",
+    "secondaryName": "white",
+    "brightness": 0.047,
+    "saturation": 0.583,
+    "hue": 219,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9101_2",
@@ -220,11 +396,22 @@
    "name": "sage shorts",
    "category": "bottom",
    "subtype": "shorts",
-   "hex": "#445760",
+   "hex": "#3d4f58",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "navy",
+    "dominant": "#3d4f58",
+    "secondary": "#b5ada2",
+    "secondaryName": "light grey",
+    "brightness": 0.292,
+    "saturation": 0.181,
+    "hue": 200,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9102_2",
@@ -233,11 +420,22 @@
    "name": "lavender shorts",
    "category": "bottom",
    "subtype": "shorts",
-   "hex": "#636987",
+   "hex": "#6c7296",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "blue",
+    "dominant": "#6c7296",
+    "secondary": "#a09580",
+    "secondaryName": "beige",
+    "brightness": 0.506,
+    "saturation": 0.167,
+    "hue": 231,
+    "temperature": "cool",
+    "neutral": false
+   }
   },
   {
    "id": "item-9103_2",
@@ -246,11 +444,22 @@
    "name": "dark brown shorts",
    "category": "bottom",
    "subtype": "shorts",
-   "hex": "#303035",
+   "hex": "#38383e",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "black",
+    "dominant": "#38383e",
+    "secondary": "#c9c4b8",
+    "secondaryName": "light yellow",
+    "brightness": 0.231,
+    "saturation": 0.051,
+    "hue": 240,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9036_2",
@@ -259,11 +468,22 @@
    "name": "black t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#111522",
+   "hex": "#0f121f",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#0f121f",
+    "secondary": "#d3c6b1",
+    "secondaryName": "beige",
+    "brightness": 0.09,
+    "saturation": 0.348,
+    "hue": 229,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9037",
@@ -272,11 +492,22 @@
    "name": "grey t-shirt with patches",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#797977",
+   "hex": "#818282",
    "pattern": "printed",
    "warmth": 1,
    "formality": 1,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#818282",
+    "secondary": "#c7af82",
+    "secondaryName": "beige",
+    "brightness": 0.508,
+    "saturation": 0.004,
+    "hue": 180,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9038",
@@ -285,11 +516,22 @@
    "name": "sand t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#b5ab99",
+   "hex": "#9c9c9b",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#9c9c9b",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.61,
+    "saturation": 0.005,
+    "hue": 60,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9039",
@@ -298,11 +540,22 @@
    "name": "navy t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#142143",
+   "hex": "#111f3f",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#111f3f",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.157,
+    "saturation": 0.575,
+    "hue": 222,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9040",
@@ -311,11 +564,22 @@
    "name": "navy hooded t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#1a2a55",
+   "hex": "#1b2a54",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#1b2a54",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.218,
+    "saturation": 0.514,
+    "hue": 224,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9041",
@@ -324,11 +588,22 @@
    "name": "blue-grey graphic t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#3a4a6c",
+   "hex": "#3c4c6e",
    "pattern": "printed",
    "warmth": 1,
    "formality": 1,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "blue",
+    "dominant": "#3c4c6e",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.333,
+    "saturation": 0.294,
+    "hue": 221,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9042",
@@ -337,11 +612,22 @@
    "name": "purple t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#342e52",
+   "hex": "#332d4f",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "dark purple",
+    "dominant": "#332d4f",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.243,
+    "saturation": 0.274,
+    "hue": 251,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9043",
@@ -350,11 +636,22 @@
    "name": "white t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#d8d5cd",
+   "hex": "#b2b2b2",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#b2b2b2",
+    "secondary": "#8c7b57",
+    "secondaryName": "orange",
+    "brightness": 0.698,
+    "saturation": 0.0,
+    "hue": 0,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9044",
@@ -363,11 +660,22 @@
    "name": "black oversized t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#171b29",
+   "hex": "#1d2336",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#1d2336",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.163,
+    "saturation": 0.301,
+    "hue": 226,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9045",
@@ -376,11 +684,22 @@
    "name": "rust pocket t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#8a5a3d",
+   "hex": "#6f503e",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "orange",
+    "dominant": "#6f503e",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.339,
+    "saturation": 0.283,
+    "hue": 22,
+    "temperature": "warm",
+    "neutral": false
+   }
   },
   {
    "id": "item-9046",
@@ -389,11 +708,22 @@
    "name": "olive t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#6a6e69",
+   "hex": "#6b6f6b",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "grey",
+    "dominant": "#6b6f6b",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.427,
+    "saturation": 0.018,
+    "hue": 120,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9047",
@@ -402,11 +732,22 @@
    "name": "plum t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#4e2f4c",
+   "hex": "#523453",
    "pattern": "solid",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "dark pink",
+    "dominant": "#523453",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.265,
+    "saturation": 0.23,
+    "hue": 298,
+    "temperature": "cool",
+    "neutral": false
+   }
   },
   {
    "id": "item-9048",
@@ -415,11 +756,22 @@
    "name": "white printed t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#cfcdc8",
+   "hex": "#b4b4b3",
    "pattern": "printed",
    "warmth": 1,
    "formality": 1,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#b4b4b3",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.704,
+    "saturation": 0.007,
+    "hue": 60,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9049",
@@ -428,11 +780,22 @@
    "name": "grey striped t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#646765",
+   "hex": "#676a68",
    "pattern": "striped",
    "warmth": 1,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#676a68",
+    "secondary": "#c5ae88",
+    "secondaryName": "beige",
+    "brightness": 0.41,
+    "saturation": 0.014,
+    "hue": 140,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9092",
@@ -441,11 +804,22 @@
    "name": "navy sports t-shirt",
    "category": "top",
    "subtype": "t-shirt",
-   "hex": "#333a53",
+   "hex": "#353b54",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "navy",
+    "dominant": "#353b54",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.269,
+    "saturation": 0.226,
+    "hue": 228,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9080",
@@ -454,11 +828,22 @@
    "name": "blue polo shirt",
    "category": "top",
    "subtype": "polo shirt",
-   "hex": "#1c4898",
+   "hex": "#2254b0",
    "pattern": "solid",
    "warmth": 1,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "blue",
+    "dominant": "#2254b0",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.412,
+    "saturation": 0.676,
+    "hue": 219,
+    "temperature": "cool",
+    "neutral": false
+   }
   },
   {
    "id": "item-9033_2",
@@ -467,11 +852,22 @@
    "name": "grey hoodie",
    "category": "top",
    "subtype": "hoodie",
-   "hex": "#777675",
+   "hex": "#c6b79d",
    "pattern": "solid",
    "warmth": 3,
    "formality": 1,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "beige",
+    "dominant": "#c6b79d",
+    "secondary": "#818285",
+    "secondaryName": "grey",
+    "brightness": 0.696,
+    "saturation": 0.265,
+    "hue": 38,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9050",
@@ -480,11 +876,22 @@
    "name": "cream long-sleeve top",
    "category": "top",
    "subtype": "long-sleeve top",
-   "hex": "#c3bdb2",
+   "hex": "#9f9d99",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#9f9d99",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.612,
+    "saturation": 0.03,
+    "hue": 40,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9051_2",
@@ -493,11 +900,22 @@
    "name": "dark olive long-sleeve top",
    "category": "top",
    "subtype": "long-sleeve top",
-   "hex": "#2f383b",
+   "hex": "#323b3f",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "black",
+    "dominant": "#323b3f",
+    "secondary": "#cec5b8",
+    "secondaryName": "beige",
+    "brightness": 0.222,
+    "saturation": 0.115,
+    "hue": 198,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9052_2",
@@ -506,11 +924,22 @@
    "name": "purple long-sleeve top",
    "category": "top",
    "subtype": "long-sleeve top",
-   "hex": "#4b2a4d",
+   "hex": "#4d2b50",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "dark pink",
+    "dominant": "#4d2b50",
+    "secondary": "#dbd3c8",
+    "secondaryName": "beige",
+    "brightness": 0.241,
+    "saturation": 0.301,
+    "hue": 295,
+    "temperature": "cool",
+    "neutral": false
+   }
   },
   {
    "id": "item-9053",
@@ -519,11 +948,22 @@
    "name": "navy long-sleeve top",
    "category": "top",
    "subtype": "long-sleeve top",
-   "hex": "#142345",
+   "hex": "#111f3f",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#111f3f",
+    "secondary": "#cec5b5",
+    "secondaryName": "beige",
+    "brightness": 0.157,
+    "saturation": 0.575,
+    "hue": 222,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9054",
@@ -532,11 +972,22 @@
    "name": "charcoal turtleneck",
    "category": "top",
    "subtype": "sweater",
-   "hex": "#242b37",
+   "hex": "#232a37",
    "pattern": "solid",
    "warmth": 4,
    "formality": 4,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#232a37",
+    "secondary": "#cec5b4",
+    "secondaryName": "beige",
+    "brightness": 0.176,
+    "saturation": 0.222,
+    "hue": 219,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9070",
@@ -545,11 +996,22 @@
    "name": "taupe zip sweater",
    "category": "top",
    "subtype": "sweater",
-   "hex": "#52463f",
+   "hex": "#4e423a",
    "pattern": "solid",
    "warmth": 3,
    "formality": 3,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "brown",
+    "dominant": "#4e423a",
+    "secondary": "#b9b6b0",
+    "secondaryName": "light grey",
+    "brightness": 0.267,
+    "saturation": 0.147,
+    "hue": 24,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9091",
@@ -558,11 +1020,22 @@
    "name": "grey raglan long-sleeve",
    "category": "top",
    "subtype": "long-sleeve top",
-   "hex": "#768188",
+   "hex": "#717e85",
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "grey",
+    "dominant": "#717e85",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.482,
+    "saturation": 0.081,
+    "hue": 201,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9096",
@@ -571,11 +1044,22 @@
    "name": "oatmeal knit sweater",
    "category": "top",
    "subtype": "sweater",
-   "hex": "#a9968a",
+   "hex": "#7f7067",
    "pattern": "solid",
    "warmth": 4,
    "formality": 3,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#7f7067",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.451,
+    "saturation": 0.104,
+    "hue": 22,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9079",
@@ -584,11 +1068,22 @@
    "name": "cream zip sweatshirt",
    "category": "top",
    "subtype": "sweatshirt",
-   "hex": "#bdb9b0",
+   "hex": "#9a9b9c",
    "pattern": "solid",
    "warmth": 3,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#9a9b9c",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.608,
+    "saturation": 0.01,
+    "hue": 210,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9085",
@@ -597,11 +1092,22 @@
    "name": "sage hoodie",
    "category": "top",
    "subtype": "hoodie",
-   "hex": "#666762",
+   "hex": "#6b6d69",
    "pattern": "solid",
    "warmth": 3,
    "formality": 1,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#6b6d69",
+    "secondary": "#b5ac9f",
+    "secondaryName": "beige",
+    "brightness": 0.42,
+    "saturation": 0.019,
+    "hue": 90,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9087",
@@ -610,11 +1116,22 @@
    "name": "cycling jersey",
    "category": "top",
    "subtype": "jersey",
-   "hex": "#1a2543",
+   "hex": "#1e2b4d",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "cycling"
+   "style": "cycling",
+   "color": {
+    "name": "navy",
+    "dominant": "#1e2b4d",
+    "secondary": "#cbc4b8",
+    "secondaryName": "beige",
+    "brightness": 0.21,
+    "saturation": 0.439,
+    "hue": 223,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9055",
@@ -623,11 +1140,22 @@
    "name": "grey tank top",
    "category": "top",
    "subtype": "tank top",
-   "hex": "#636769",
+   "hex": "#666a6c",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#666a6c",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.412,
+    "saturation": 0.029,
+    "hue": 200,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9056",
@@ -636,11 +1164,22 @@
    "name": "dark striped tank top",
    "category": "top",
    "subtype": "tank top",
-   "hex": "#404550",
+   "hex": "#40434d",
    "pattern": "striped",
    "warmth": 1,
    "formality": 1,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "black",
+    "dominant": "#40434d",
+    "secondary": "#cab99e",
+    "secondaryName": "beige",
+    "brightness": 0.276,
+    "saturation": 0.092,
+    "hue": 226,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9058_2",
@@ -649,11 +1188,22 @@
    "name": "navy sleeveless top",
    "category": "top",
    "subtype": "tank top",
-   "hex": "#121625",
+   "hex": "#101321",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#101321",
+    "secondary": "#d1c6b5",
+    "secondaryName": "beige",
+    "brightness": 0.096,
+    "saturation": 0.347,
+    "hue": 229,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9059_2",
@@ -662,11 +1212,22 @@
    "name": "navy graphic tank top",
    "category": "top",
    "subtype": "tank top",
-   "hex": "#111c38",
+   "hex": "#111d3b",
    "pattern": "printed",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "navy",
+    "dominant": "#111d3b",
+    "secondary": "#cdc6b9",
+    "secondaryName": "beige",
+    "brightness": 0.149,
+    "saturation": 0.553,
+    "hue": 223,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9061",
@@ -675,11 +1236,22 @@
    "name": "grey striped tank top",
    "category": "top",
    "subtype": "tank top",
-   "hex": "#5f6065",
+   "hex": "#63646a",
    "pattern": "striped",
    "warmth": 1,
    "formality": 1,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#63646a",
+    "secondary": "#d3c6b0",
+    "secondaryName": "beige",
+    "brightness": 0.402,
+    "saturation": 0.034,
+    "hue": 231,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9100_2",
@@ -688,11 +1260,22 @@
    "name": "navy hooded sleeveless top",
    "category": "top",
    "subtype": "tank top",
-   "hex": "#273353",
+   "hex": "#283556",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "navy",
+    "dominant": "#283556",
+    "secondary": "#dfcfb6",
+    "secondaryName": "beige",
+    "brightness": 0.247,
+    "saturation": 0.365,
+    "hue": 223,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9060_2",
@@ -701,11 +1284,22 @@
    "name": "black boxy short-sleeve shirt",
    "category": "top",
    "subtype": "short-sleeve shirt",
-   "hex": "#141825",
+   "hex": "#10131f",
    "pattern": "solid",
    "warmth": 1,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#10131f",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.092,
+    "saturation": 0.319,
+    "hue": 228,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9063",
@@ -714,11 +1308,22 @@
    "name": "grey-green short-sleeve shirt",
    "category": "top",
    "subtype": "short-sleeve shirt",
-   "hex": "#434f59",
+   "hex": "#424c54",
    "pattern": "solid",
    "warmth": 1,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#424c54",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.294,
+    "saturation": 0.12,
+    "hue": 207,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9064",
@@ -727,11 +1332,22 @@
    "name": "sage short-sleeve shirt",
    "category": "top",
    "subtype": "short-sleeve shirt",
-   "hex": "#768389",
+   "hex": "#84949e",
    "pattern": "solid",
    "warmth": 1,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#84949e",
+    "secondary": "#9cb3c8",
+    "secondaryName": "blue",
+    "brightness": 0.569,
+    "saturation": 0.118,
+    "hue": 203,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9066_2",
@@ -740,11 +1356,22 @@
    "name": "olive short-sleeve shirt",
    "category": "top",
    "subtype": "short-sleeve shirt",
-   "hex": "#838e8d",
+   "hex": "#7e8784",
    "pattern": "solid",
    "warmth": 1,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#7e8784",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.512,
+    "saturation": 0.036,
+    "hue": 160,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9072",
@@ -753,11 +1380,22 @@
    "name": "cream short-sleeve shirt",
    "category": "top",
    "subtype": "short-sleeve shirt",
-   "hex": "#b0aa9c",
+   "hex": "#9b9b99",
    "pattern": "solid",
    "warmth": 1,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#9b9b99",
+    "secondary": "#716e65",
+    "secondaryName": "grey",
+    "brightness": 0.604,
+    "saturation": 0.01,
+    "hue": 60,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9081",
@@ -766,11 +1404,22 @@
    "name": "navy short-sleeve shirt",
    "category": "top",
    "subtype": "short-sleeve shirt",
-   "hex": "#222435",
+   "hex": "#252739",
    "pattern": "solid",
    "warmth": 1,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#252739",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.184,
+    "saturation": 0.213,
+    "hue": 234,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9082",
@@ -779,11 +1428,22 @@
    "name": "cream zigzag shirt",
    "category": "top",
    "subtype": "short-sleeve shirt",
-   "hex": "#c2c2bf",
+   "hex": "#cbccca",
    "pattern": "printed",
    "warmth": 1,
    "formality": 3,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#cbccca",
+    "secondary": "#3a393b",
+    "secondaryName": "black",
+    "brightness": 0.796,
+    "saturation": 0.019,
+    "hue": 90,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9083",
@@ -792,11 +1452,22 @@
    "name": "cream striped shirt",
    "category": "top",
    "subtype": "shirt",
-   "hex": "#b8b5ae",
+   "hex": "#9b9d9a",
    "pattern": "striped",
    "warmth": 2,
    "formality": 4,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#9b9d9a",
+    "secondary": "#8b7b57",
+    "secondaryName": "yellow",
+    "brightness": 0.61,
+    "saturation": 0.015,
+    "hue": 100,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9084_2",
@@ -805,11 +1476,22 @@
    "name": "brown striped shirt",
    "category": "top",
    "subtype": "shirt",
-   "hex": "#8f908e",
+   "hex": "#c7b482",
    "pattern": "striped",
    "warmth": 2,
    "formality": 4,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "yellow",
+    "dominant": "#c7b482",
+    "secondary": "#555351",
+    "secondaryName": "grey",
+    "brightness": 0.645,
+    "saturation": 0.381,
+    "hue": 43,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9097",
@@ -818,11 +1500,22 @@
    "name": "plaid flannel shirt",
    "category": "top",
    "subtype": "shirt",
-   "hex": "#514244",
+   "hex": "#6a5352",
    "pattern": "checked",
    "warmth": 3,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "red",
+    "dominant": "#6a5352",
+    "secondary": "#e4e3df",
+    "secondaryName": "white",
+    "brightness": 0.369,
+    "saturation": 0.128,
+    "hue": 2,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9098_2",
@@ -831,11 +1524,22 @@
    "name": "white shirt",
    "category": "top",
    "subtype": "shirt",
-   "hex": "#d6dbe2",
+   "hex": "#aeb9c9",
    "pattern": "solid",
    "warmth": 2,
    "formality": 5,
-   "style": "formal"
+   "style": "formal",
+   "color": {
+    "name": "light blue",
+    "dominant": "#aeb9c9",
+    "secondary": "#867c6e",
+    "secondaryName": "grey",
+    "brightness": 0.735,
+    "saturation": 0.2,
+    "hue": 216,
+    "temperature": "cool",
+    "neutral": false
+   }
   },
   {
    "id": "item-9034",
@@ -844,11 +1548,22 @@
    "name": "khaki jacket",
    "category": "outerwear",
    "subtype": "jacket",
-   "hex": "#c0bcb0",
+   "hex": "#b3ad9c",
    "pattern": "solid",
    "warmth": 3,
    "formality": 2,
-   "style": "outdoor"
+   "style": "outdoor",
+   "color": {
+    "name": "yellow",
+    "dominant": "#b3ad9c",
+    "secondary": "#cdcec8",
+    "secondaryName": "light grey",
+    "brightness": 0.657,
+    "saturation": 0.131,
+    "hue": 44,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9067_2",
@@ -857,11 +1572,22 @@
    "name": "patchwork fleece vest",
    "category": "outerwear",
    "subtype": "vest",
-   "hex": "#333335",
+   "hex": "#393b3b",
    "pattern": "printed",
    "warmth": 3,
    "formality": 1,
-   "style": "outdoor"
+   "style": "outdoor",
+   "color": {
+    "name": "black",
+    "dominant": "#393b3b",
+    "secondary": "#989b9e",
+    "secondaryName": "light grey",
+    "brightness": 0.227,
+    "saturation": 0.017,
+    "hue": 180,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9069",
@@ -870,11 +1596,22 @@
    "name": "navy jacket",
    "category": "outerwear",
    "subtype": "jacket",
-   "hex": "#0f111d",
+   "hex": "#10121f",
    "pattern": "solid",
    "warmth": 3,
    "formality": 3,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#10121f",
+    "secondary": "#cfcdc8",
+    "secondaryName": "light grey",
+    "brightness": 0.092,
+    "saturation": 0.319,
+    "hue": 232,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9071",
@@ -883,12 +1620,23 @@
    "name": "hooded windbreaker",
    "category": "outerwear",
    "subtype": "windbreaker",
-   "hex": "#484847",
+   "hex": "#4f5253",
    "pattern": "solid",
    "warmth": 3,
    "formality": 1,
    "style": "outdoor",
-   "waterproof": true
+   "waterproof": true,
+   "color": {
+    "name": "grey",
+    "dominant": "#4f5253",
+    "secondary": "#7f6e6b",
+    "secondaryName": "grey",
+    "brightness": 0.318,
+    "saturation": 0.025,
+    "hue": 195,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9073",
@@ -897,11 +1645,22 @@
    "name": "blue puffer vest",
    "category": "outerwear",
    "subtype": "vest",
-   "hex": "#233f70",
+   "hex": "#213c6c",
    "pattern": "solid",
    "warmth": 3,
    "formality": 2,
-   "style": "outdoor"
+   "style": "outdoor",
+   "color": {
+    "name": "navy",
+    "dominant": "#213c6c",
+    "secondary": "#d2cfc7",
+    "secondaryName": "white",
+    "brightness": 0.276,
+    "saturation": 0.532,
+    "hue": 218,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9077",
@@ -910,12 +1669,23 @@
    "name": "navy puffer jacket",
    "category": "outerwear",
    "subtype": "jacket",
-   "hex": "#141828",
+   "hex": "#1f243b",
    "pattern": "solid",
    "warmth": 4,
    "formality": 3,
    "style": "casual",
-   "waterproof": true
+   "waterproof": true,
+   "color": {
+    "name": "navy",
+    "dominant": "#1f243b",
+    "secondary": "#e2e1dd",
+    "secondaryName": "white",
+    "brightness": 0.176,
+    "saturation": 0.311,
+    "hue": 229,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9078",
@@ -924,11 +1694,22 @@
    "name": "dark brown blazer",
    "category": "outerwear",
    "subtype": "blazer",
-   "hex": "#2b262b",
+   "hex": "#272226",
    "pattern": "solid",
    "warmth": 3,
    "formality": 5,
-   "style": "formal"
+   "style": "formal",
+   "color": {
+    "name": "black",
+    "dominant": "#272226",
+    "secondary": "#e3e2e0",
+    "secondaryName": "white",
+    "brightness": 0.143,
+    "saturation": 0.068,
+    "hue": 312,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9088_2",
@@ -937,12 +1718,23 @@
    "name": "cycling jacket",
    "category": "outerwear",
    "subtype": "jacket",
-   "hex": "#252736",
+   "hex": "#252838",
    "pattern": "solid",
    "warmth": 3,
    "formality": 1,
    "style": "cycling",
-   "waterproof": true
+   "waterproof": true,
+   "color": {
+    "name": "navy",
+    "dominant": "#252838",
+    "secondary": "#cdc5b5",
+    "secondaryName": "beige",
+    "brightness": 0.182,
+    "saturation": 0.204,
+    "hue": 231,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9094_2",
@@ -951,11 +1743,22 @@
    "name": "charcoal long coat",
    "category": "outerwear",
    "subtype": "coat",
-   "hex": "#2b3141",
+   "hex": "#363d50",
    "pattern": "solid",
    "warmth": 5,
    "formality": 5,
-   "style": "formal"
+   "style": "formal",
+   "color": {
+    "name": "navy",
+    "dominant": "#363d50",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.263,
+    "saturation": 0.194,
+    "hue": 224,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9095",
@@ -964,11 +1767,22 @@
    "name": "olive zip jacket",
    "category": "outerwear",
    "subtype": "jacket",
-   "hex": "#424242",
+   "hex": "#3c3d3c",
    "pattern": "solid",
    "warmth": 3,
    "formality": 2,
-   "style": "outdoor"
+   "style": "outdoor",
+   "color": {
+    "name": "black",
+    "dominant": "#3c3d3c",
+    "secondary": "#bab5ad",
+    "secondaryName": "light grey",
+    "brightness": 0.237,
+    "saturation": 0.008,
+    "hue": 120,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9099_2",
@@ -977,11 +1791,22 @@
    "name": "beige jacket",
    "category": "outerwear",
    "subtype": "jacket",
-   "hex": "#706f72",
+   "hex": "#6a6a6d",
    "pattern": "solid",
    "warmth": 3,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#6a6a6d",
+    "secondary": "#99999d",
+    "secondaryName": "light grey",
+    "brightness": 0.422,
+    "saturation": 0.014,
+    "hue": 240,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9104_2",
@@ -990,11 +1815,22 @@
    "name": "grey sneakers",
    "category": "shoes",
    "subtype": "sneakers",
-   "hex": "#333333",
+   "hex": "#383a3d",
    "pattern": "solid",
    "warmth": 2,
    "formality": 3,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "black",
+    "dominant": "#383a3d",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.229,
+    "saturation": 0.043,
+    "hue": 216,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9105_2",
@@ -1003,11 +1839,22 @@
    "name": "dark green shoes",
    "category": "shoes",
    "subtype": "shoes",
-   "hex": "#192e28",
+   "hex": "#4e5558",
    "pattern": "solid",
    "warmth": 3,
    "formality": 3,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#4e5558",
+    "secondary": "#eadfcd",
+    "secondaryName": "beige",
+    "brightness": 0.325,
+    "saturation": 0.06,
+    "hue": 198,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9106",
@@ -1016,12 +1863,23 @@
    "name": "cork sandals",
    "category": "shoes",
    "subtype": "sandals",
-   "hex": "#5d4533",
+   "hex": "#69503c",
    "pattern": "solid",
    "warmth": 1,
    "formality": 1,
    "style": "casual",
-   "openToe": true
+   "openToe": true,
+   "color": {
+    "name": "orange",
+    "dominant": "#69503c",
+    "secondary": "#808086",
+    "secondaryName": "grey",
+    "brightness": 0.324,
+    "saturation": 0.273,
+    "hue": 27,
+    "temperature": "warm",
+    "neutral": false
+   }
   },
   {
    "id": "item-9107",
@@ -1030,11 +1888,22 @@
    "name": "grey running shoes",
    "category": "shoes",
    "subtype": "running shoes",
-   "hex": "#676f72",
+   "hex": "#252420",
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "black",
+    "dominant": "#252420",
+    "secondary": "#87959e",
+    "secondaryName": "light grey",
+    "brightness": 0.135,
+    "saturation": 0.072,
+    "hue": 48,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9108",
@@ -1043,11 +1912,22 @@
    "name": "cream running shoes",
    "category": "shoes",
    "subtype": "running shoes",
-   "hex": "#c9c4b8",
+   "hex": "#6d6e69",
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "grey",
+    "dominant": "#6d6e69",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.422,
+    "saturation": 0.023,
+    "hue": 72,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9109",
@@ -1056,11 +1936,22 @@
    "name": "brown leather boots",
    "category": "shoes",
    "subtype": "boots",
-   "hex": "#6b4a33",
+   "hex": "#e8e5dd",
    "pattern": "solid",
    "warmth": 4,
    "formality": 4,
-   "style": "outdoor"
+   "style": "outdoor",
+   "color": {
+    "name": "light yellow",
+    "dominant": "#e8e5dd",
+    "secondary": "#6c5451",
+    "secondaryName": "red",
+    "brightness": 0.888,
+    "saturation": 0.193,
+    "hue": 44,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9110",
@@ -1069,12 +1960,23 @@
    "name": "brown leather boots",
    "category": "shoes",
    "subtype": "boots",
-   "hex": "#3f2923",
+   "hex": "#3c261f",
    "pattern": "solid",
    "warmth": 4,
    "formality": 4,
    "style": "smart-casual",
-   "duplicateOf": "item-9109"
+   "duplicateOf": "item-9109",
+   "color": {
+    "name": "brown",
+    "dominant": "#3c261f",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.178,
+    "saturation": 0.319,
+    "hue": 14,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9111",
@@ -1083,11 +1985,22 @@
    "name": "navy sneakers",
    "category": "shoes",
    "subtype": "sneakers",
-   "hex": "#191b24",
+   "hex": "#1d1e25",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#1d1e25",
+    "secondary": "#394052",
+    "secondaryName": "navy",
+    "brightness": 0.129,
+    "saturation": 0.121,
+    "hue": 232,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9112",
@@ -1096,11 +2009,22 @@
    "name": "navy trainers",
    "category": "shoes",
    "subtype": "sneakers",
-   "hex": "#141926",
+   "hex": "#0a0f1f",
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "navy",
+    "dominant": "#0a0f1f",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.08,
+    "saturation": 0.512,
+    "hue": 226,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9113",
@@ -1109,12 +2033,23 @@
    "name": "dark trail shoes",
    "category": "shoes",
    "subtype": "trail shoes",
-   "hex": "#161317",
+   "hex": "#212023",
    "pattern": "solid",
    "warmth": 3,
    "formality": 1,
    "style": "outdoor",
-   "waterproof": true
+   "waterproof": true,
+   "color": {
+    "name": "black",
+    "dominant": "#212023",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.131,
+    "saturation": 0.045,
+    "hue": 260,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9114",
@@ -1123,11 +2058,22 @@
    "name": "white trainers",
    "category": "shoes",
    "subtype": "sneakers",
-   "hex": "#ddd8cf",
+   "hex": "#99866b",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "sporty"
+   "style": "sporty",
+   "color": {
+    "name": "beige",
+    "dominant": "#99866b",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.51,
+    "saturation": 0.184,
+    "hue": 35,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9115",
@@ -1136,11 +2082,22 @@
    "name": "dark grey suede sneakers",
    "category": "shoes",
    "subtype": "sneakers",
-   "hex": "#141010",
+   "hex": "#130f0f",
    "pattern": "solid",
    "warmth": 2,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "black",
+    "dominant": "#130f0f",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.067,
+    "saturation": 0.118,
+    "hue": 0,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9116",
@@ -1149,11 +2106,22 @@
    "name": "brown suede sneakers",
    "category": "shoes",
    "subtype": "sneakers",
-   "hex": "#3d2a22",
+   "hex": "#130d0b",
    "pattern": "solid",
    "warmth": 2,
    "formality": 3,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "color": {
+    "name": "brown",
+    "dominant": "#130d0b",
+    "secondary": "#dfd2c8",
+    "secondaryName": "beige",
+    "brightness": 0.059,
+    "saturation": 0.267,
+    "hue": 15,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9117",
@@ -1162,11 +2130,22 @@
    "name": "black MTB cycling shoes",
    "category": "shoes",
    "subtype": "cycling shoes",
-   "hex": "#1f2022",
+   "hex": "#212225",
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "cycling"
+   "style": "cycling",
+   "color": {
+    "name": "black",
+    "dominant": "#212225",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.137,
+    "saturation": 0.057,
+    "hue": 225,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9118",
@@ -1175,11 +2154,22 @@
    "name": "black road cycling shoes",
    "category": "shoes",
    "subtype": "cycling shoes",
-   "hex": "#121417",
+   "hex": "#1f2124",
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "cycling"
+   "style": "cycling",
+   "color": {
+    "name": "black",
+    "dominant": "#1f2124",
+    "secondary": "#cab79c",
+    "secondaryName": "beige",
+    "brightness": 0.131,
+    "saturation": 0.075,
+    "hue": 216,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9119",
@@ -1188,11 +2178,22 @@
    "name": "black gravel cycling shoes",
    "category": "shoes",
    "subtype": "cycling shoes",
-   "hex": "#15171a",
+   "hex": "#1d1f22",
    "pattern": "solid",
    "warmth": 2,
    "formality": 1,
-   "style": "cycling"
+   "style": "cycling",
+   "color": {
+    "name": "black",
+    "dominant": "#1d1f22",
+    "secondary": "#948272",
+    "secondaryName": "beige",
+    "brightness": 0.124,
+    "saturation": 0.079,
+    "hue": 216,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9120",
@@ -1201,11 +2202,22 @@
    "name": "white ankle socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#bfbfbd",
+   "hex": "#cacac9",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#cacac9",
+    "secondary": "#9f9c99",
+    "secondaryName": "light grey",
+    "brightness": 0.79,
+    "saturation": 0.009,
+    "hue": 60,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9121",
@@ -1214,11 +2226,22 @@
    "name": "grey printed socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#909190",
+   "hex": "#9a9c9c",
    "pattern": "printed",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "light grey",
+    "dominant": "#9a9c9c",
+    "secondary": "#6d6c6a",
+    "secondaryName": "grey",
+    "brightness": 0.608,
+    "saturation": 0.01,
+    "hue": 180,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9122_2",
@@ -1227,11 +2250,22 @@
    "name": "yellow printed socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#bbb861",
+   "hex": "#878139",
    "pattern": "printed",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "yellow",
+    "dominant": "#878139",
+    "secondary": "#b4b057",
+    "secondaryName": "yellow",
+    "brightness": 0.376,
+    "saturation": 0.406,
+    "hue": 55,
+    "temperature": "warm",
+    "neutral": false
+   }
   },
   {
    "id": "item-9123_2",
@@ -1240,11 +2274,22 @@
    "name": "sage sports socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#656359",
+   "hex": "#6f6f67",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#6f6f67",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.42,
+    "saturation": 0.037,
+    "hue": 60,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9124_2",
@@ -1253,11 +2298,22 @@
    "name": "patterned wool socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#cfc7bb",
+   "hex": "#cbc4b9",
    "pattern": "printed",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "beige",
+    "dominant": "#cbc4b9",
+    "secondary": null,
+    "secondaryName": null,
+    "brightness": 0.761,
+    "saturation": 0.148,
+    "hue": 37,
+    "temperature": "warm",
+    "neutral": true
+   }
   },
   {
    "id": "item-9125_2",
@@ -1266,11 +2322,22 @@
    "name": "navy printed socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#111119",
+   "hex": "#11121c",
    "pattern": "printed",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#11121c",
+    "secondary": "#d0c7b7",
+    "secondaryName": "beige",
+    "brightness": 0.088,
+    "saturation": 0.244,
+    "hue": 235,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9126_2",
@@ -1279,11 +2346,22 @@
    "name": "grey sports socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#3e4648",
+   "hex": "#424d50",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#424d50",
+    "secondary": "#c7b6a0",
+    "secondaryName": "beige",
+    "brightness": 0.286,
+    "saturation": 0.096,
+    "hue": 193,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9127",
@@ -1292,11 +2370,22 @@
    "name": "black socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#1c1c26",
+   "hex": "#1d1e26",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#1d1e26",
+    "secondary": "#363b51",
+    "secondaryName": "navy",
+    "brightness": 0.131,
+    "saturation": 0.134,
+    "hue": 233,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9128_2",
@@ -1305,11 +2394,22 @@
    "name": "cream sports socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#877e6f",
+   "hex": "#837c72",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#837c72",
+    "secondary": "#b2b3b5",
+    "secondaryName": "light grey",
+    "brightness": 0.48,
+    "saturation": 0.069,
+    "hue": 35,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9129_2",
@@ -1318,11 +2418,22 @@
    "name": "orange socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#89391a",
+   "hex": "#863514",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "brown",
+    "dominant": "#863514",
+    "secondary": "#b25737",
+    "secondaryName": "orange",
+    "brightness": 0.302,
+    "saturation": 0.74,
+    "hue": 17,
+    "temperature": "warm",
+    "neutral": false
+   }
   },
   {
    "id": "item-9130_2",
@@ -1331,11 +2442,22 @@
    "name": "grey socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#595a59",
+   "hex": "#565755",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#565755",
+    "secondary": "#7e8286",
+    "secondaryName": "grey",
+    "brightness": 0.337,
+    "saturation": 0.012,
+    "hue": 90,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9131_2",
@@ -1344,11 +2466,22 @@
    "name": "dark grey socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#40444d",
+   "hex": "#373a40",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "black",
+    "dominant": "#373a40",
+    "secondary": "#d2c5b1",
+    "secondaryName": "beige",
+    "brightness": 0.233,
+    "saturation": 0.076,
+    "hue": 220,
+    "temperature": "neutral",
+    "neutral": true
+   }
   },
   {
    "id": "item-9132_2",
@@ -1357,11 +2490,22 @@
    "name": "black ankle socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#151520",
+   "hex": "#13131c",
    "pattern": "solid",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "navy",
+    "dominant": "#13131c",
+    "secondary": "#baae9c",
+    "secondaryName": "beige",
+    "brightness": 0.092,
+    "saturation": 0.191,
+    "hue": 240,
+    "temperature": "cool",
+    "neutral": true
+   }
   },
   {
    "id": "item-9133",
@@ -1370,11 +2514,22 @@
    "name": "grey patterned socks",
    "category": "socks",
    "subtype": "socks",
-   "hex": "#4e525c",
+   "hex": "#4d4f56",
    "pattern": "printed",
    "warmth": 2,
    "formality": 2,
-   "style": "casual"
+   "style": "casual",
+   "color": {
+    "name": "grey",
+    "dominant": "#4d4f56",
+    "secondary": "#ddcdb8",
+    "secondaryName": "beige",
+    "brightness": 0.32,
+    "saturation": 0.055,
+    "hue": 227,
+    "temperature": "neutral",
+    "neutral": true
+   }
   }
  ],
  "skipped": [],
