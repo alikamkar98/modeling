@@ -1,7 +1,7 @@
 import { fetchWeather, manualWeather, requirementsFrom, LINZ } from './weather.js';
 import { resolveOccasion, QUICK_PICKS, OCCASIONS } from './occasions.js';
 import { suggestOutfits } from './outfits.js';
-import { renderFigure, dressFigure } from './figure.js';
+import { renderCollage, composeCollage } from './collage.js';
 import { retiredIds, toggleRetired, activeItems } from './retired.js';
 
 const state = {
@@ -10,7 +10,15 @@ const state = {
   weather: null,
   lastDestination: '',
   closetFilter: 'all',
+  // Every outfit the engine ranked for the current request, and which slice of
+  // them is on screen. Paging through a stored list rather than re-running the
+  // engine is what lets "back" return the *same* outfits rather than a fresh
+  // set that happens to score similarly.
+  ranked: [],
+  page: 0,
 };
+
+const PER_PAGE = 3;
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -81,13 +89,14 @@ function thumb(item) {
   return `<span class="item__swatch" style="background:${item.hex}"></span>`;
 }
 
-function outfitCard(outfit, index) {
+function outfitCard(outfit, index, offset) {
   const items = outfit.items;
+  const number = String(offset + index + 1).padStart(2, '0');
   return `
     <article class="outfit">
-      <div class="outfit__figure" data-outfit="${index}">${renderFigure(items, { width: 150, height: 225 })}</div>
+      <div class="outfit__figure" data-outfit="${index}">${renderCollage(items, { id: index })}</div>
       <div>
-        <p class="outfit__rank">${index === 0 ? 'Best match' : `Option ${index + 1}`}</p>
+        <p class="outfit__rank">Outfit ${number}</p>
         <p class="outfit__why">${outfit.rationale.join(' · ')}</p>
         ${outfit.warnings.length
           ? `<p class="outfit__warn">⚠ ${outfit.warnings.join(' · ')}</p>` : ''}
@@ -121,7 +130,7 @@ function suggest(destination) {
   const profile = OCCASIONS[key];
   const req = state.weather ? requirementsFrom(state.weather) : null;
   const available = activeItems(state.wardrobe);
-  const result = suggestOutfits(available, key, req);
+  const result = suggestOutfits(available, key, req, { count: 15 });
 
   const header = confident
     ? `<p class="muted">${profile.label} — ${profile.note}</p>`
@@ -146,14 +155,43 @@ function suggest(destination) {
     return;
   }
 
-  results.innerHTML = header + retiredNote + result.outfits.map(outfitCard).join('');
+  state.ranked = result.outfits;
+  state.page = 0;
+  state.header = header + retiredNote;
+  renderPage();
+}
 
-  // Cut-outs are computed from the photos in the browser, so dress each figure
-  // after the cards are on screen rather than blocking the result on them.
+/** Draw the current page of outfits, plus the controls to move between pages. */
+function renderPage() {
+  const results = $('#results');
+  const total = state.ranked.length;
+  const start = state.page * PER_PAGE;
+  const shown = state.ranked.slice(start, start + PER_PAGE);
+  const hasPrev = state.page > 0;
+  const hasNext = start + PER_PAGE < total;
+
+  results.innerHTML = state.header
+    + shown.map((o, i) => outfitCard(o, i, start)).join('')
+    + `<div class="pager">
+         <button class="btn" id="pager-prev" ${hasPrev ? '' : 'disabled'}>← Previous</button>
+         <span class="pager__count">${start + 1}–${Math.min(start + PER_PAGE, total)} of ${total}</span>
+         <button class="btn btn--primary" id="pager-next" ${hasNext ? '' : 'disabled'}>Show me others →</button>
+       </div>`;
+
   results.querySelectorAll('[data-outfit]').forEach((host) => {
-    const outfit = result.outfits[Number(host.dataset.outfit)];
-    dressFigure(host.querySelector('.figure'), outfit.items);
+    composeCollage(host.querySelector('.collage'), shown[Number(host.dataset.outfit)].items);
   });
+
+  $('#pager-prev').addEventListener('click', () => {
+    if (state.page > 0) { state.page--; renderPage(); scrollToResults(); }
+  });
+  $('#pager-next').addEventListener('click', () => {
+    if ((state.page + 1) * PER_PAGE < total) { state.page++; renderPage(); scrollToResults(); }
+  });
+}
+
+function scrollToResults() {
+  $('#results').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /* -------------------------------------------------------------- closet -- */

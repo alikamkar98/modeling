@@ -176,3 +176,31 @@ test('no two active garments share a name', () => {
   const dupes = names.filter((n, idx) => names.indexOf(n) !== idx);
   assert.deepEqual([...new Set(dupes)], [], 'duplicate names among active items');
 });
+
+test('every garment carries measured colour data', () => {
+  for (const item of W) {
+    const c = item.color;
+    assert.ok(c, `${item.id} has no colour analysis`);
+    assert.match(c.dominant, /^#[0-9a-f]{6}$/i, `${item.id} dominant`);
+    assert.equal(c.dominant, item.hex, `${item.id}: hex and dominant disagree`);
+    assert.ok(c.brightness >= 0 && c.brightness <= 1, `${item.id} brightness`);
+    assert.ok(c.saturation >= 0 && c.saturation <= 1, `${item.id} saturation`);
+    assert.ok(['warm', 'cool', 'neutral'].includes(c.temperature), `${item.id} temperature`);
+    assert.equal(typeof c.neutral, 'boolean', `${item.id} neutral`);
+    // A secondary colour is optional, but when present it must be a real one.
+    if (c.secondary) assert.match(c.secondary, /^#[0-9a-f]{6}$/i, `${item.id} secondary`);
+  }
+});
+
+test('every garment says whether it can be cut out', () => {
+  // The collage only attempts background removal where this is true; a missing
+  // flag would silently send a shredded cut-out to the screen.
+  for (const item of W) {
+    assert.equal(typeof item.cutoutOk, 'boolean', `${item.id} has no cutoutOk`);
+    assert.equal(typeof item.floorDistance, 'number', `${item.id} has no floorDistance`);
+    assert.equal(item.cutoutOk, item.floorDistance >= 250,
+      `${item.id}: cutoutOk disagrees with its own measurement`);
+  }
+  // If this ever hits zero the collage has quietly become a photo grid.
+  assert.ok(W.filter((i) => i.cutoutOk).length > 40, 'too few garments cut out cleanly');
+});

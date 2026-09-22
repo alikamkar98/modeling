@@ -125,23 +125,58 @@ main { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
 .outfit {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 18px; display: grid; gap: 18px;
-  grid-template-columns: 170px 1fr;
+  grid-template-columns: minmax(200px, 300px) 1fr;
 }
 @media (max-width: 620px) { .outfit { grid-template-columns: 1fr; } }
 
 .outfit__figure {
-  background: var(--surface-2); border-radius: 10px;
-  display: flex; align-items: center; justify-content: center; padding: 8px;
+  background: #f4f3f0; border-radius: 10px; padding: 10px;
 }
 .outfit__figure svg { max-width: 100%; height: auto; }
 
-/* The figure: a drawn body with photographed garments laid over it. */
-.figure { position: relative; width: 100%; max-width: 190px; margin: 0 auto; }
-.figure__body { position: absolute; inset: 0; width: 100%; height: 100%; }
-.figure__garment {
-  position: absolute; left: 50%; transform: translateX(-50%);
-  object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+/* The collage: the garments themselves, cut out and composed. */
+.collage {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  background: var(--surface);
+  border-radius: 6px;
+  overflow: hidden;
 }
+.collage__piece {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16));
+}
+/* Garments that can't be lifted off the floor keep their photograph, framed so
+   the composition still reads as deliberate rather than half-finished. */
+.collage__piece--photo {
+  object-fit: cover;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+  filter: none;
+}
+/* Outerwear sits behind, shoes in front — the same stacking a stylist would
+   use laying pieces out on a table. */
+.collage__piece--outerwear { z-index: 1; }
+.collage__piece--bottom    { z-index: 2; }
+.collage__piece--top       { z-index: 3; }
+.collage__piece--shoes     { z-index: 4; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .collage { background: #f4f3f0; }
+}
+:root[data-theme="dark"] .collage { background: #f4f3f0; }
+
+/* Paging through suggestions */
+.pager {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  padding-top: 4px;
+}
+.pager__count { color: var(--ink-soft); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.pager .btn[disabled] { opacity: 0.4; cursor: default; }
 
 .outfit__rank { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
 .outfit__why { margin: 4px 0 14px; font-size: 0.95rem; color: var(--ink-soft); }

@@ -26,7 +26,9 @@
     "hue": 222,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 413
   },
   {
    "id": "item-9027",
@@ -50,7 +52,9 @@
     "hue": 32,
     "temperature": "warm",
     "neutral": false
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 294
   },
   {
    "id": "item-9028",
@@ -75,7 +79,9 @@
     "hue": 228,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 471
   },
   {
    "id": "item-9029",
@@ -99,7 +105,9 @@
     "hue": 223,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 437
   },
   {
    "id": "item-9030",
@@ -123,7 +131,9 @@
     "hue": 217,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 382
   },
   {
    "id": "item-9031",
@@ -147,7 +157,9 @@
     "hue": 60,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 254
   },
   {
    "id": "item-9032_2",
@@ -171,7 +183,9 @@
     "hue": 219,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 421
   },
   {
    "id": "item-9035",
@@ -195,7 +209,9 @@
     "hue": 222,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 505
   },
   {
    "id": "item-9062",
@@ -219,7 +235,9 @@
     "hue": 16,
     "temperature": "warm",
     "neutral": false
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 445
   },
   {
    "id": "item-9065_2",
@@ -243,7 +261,9 @@
     "hue": 340,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 187
   },
   {
    "id": "item-9068",
@@ -267,7 +287,9 @@
     "hue": 231,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 543
   },
   {
    "id": "item-9075",
@@ -291,7 +313,9 @@
     "hue": 262,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 457
   },
   {
    "id": "item-9086",
@@ -315,7 +339,9 @@
     "hue": 230,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 458
   },
   {
    "id": "item-9089",
@@ -339,7 +365,9 @@
     "hue": 226,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 537
   },
   {
    "id": "item-9090",
@@ -363,7 +391,9 @@
     "hue": 48,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 10
   },
   {
    "id": "item-9093",
@@ -387,7 +417,9 @@
     "hue": 219,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 491
   },
   {
    "id": "item-9101_2",
@@ -411,7 +443,9 @@
     "hue": 200,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 315
   },
   {
    "id": "item-9102_2",
@@ -435,7 +469,9 @@
     "hue": 231,
     "temperature": "cool",
     "neutral": false
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 112
   },
   {
    "id": "item-9103_2",
@@ -459,7 +495,9 @@
     "hue": 240,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 417
   },
   {
    "id": "item-9036_2",
@@ -483,7 +521,9 @@
     "hue": 229,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 565
   },
   {
    "id": "item-9037",
@@ -507,7 +547,9 @@
     "hue": 180,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 92
   },
   {
    "id": "item-9038",
@@ -531,7 +573,9 @@
     "hue": 60,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 69
   },
   {
    "id": "item-9039",
@@ -555,7 +599,9 @@
     "hue": 222,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 489
   },
   {
    "id": "item-9040",
@@ -579,7 +625,9 @@
     "hue": 224,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 463
   },
   {
    "id": "item-9041",
@@ -603,7 +651,9 @@
     "hue": 221,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 358
   },
   {
    "id": "item-9042",
@@ -627,7 +677,9 @@
     "hue": 251,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 432
   },
   {
    "id": "item-9043",
@@ -651,7 +703,9 @@
     "hue": 0,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 209
   },
   {
    "id": "item-9044",
@@ -675,7 +729,9 @@
     "hue": 226,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 486
   },
   {
    "id": "item-9045",
@@ -699,7 +755,9 @@
     "hue": 22,
     "temperature": "warm",
     "neutral": false
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 280
   },
   {
    "id": "item-9046",
@@ -723,7 +781,9 @@
     "hue": 120,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 198
   },
   {
    "id": "item-9047",
@@ -747,7 +807,9 @@
     "hue": 298,
     "temperature": "cool",
     "neutral": false
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 391
   },
   {
    "id": "item-9048",
@@ -771,7 +833,9 @@
     "hue": 60,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 195
   },
   {
    "id": "item-9049",
@@ -795,7 +859,9 @@
     "hue": 140,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 218
   },
   {
    "id": "item-9092",
@@ -819,7 +885,9 @@
     "hue": 228,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 334
   },
   {
    "id": "item-9080",
@@ -843,7 +911,9 @@
     "hue": 219,
     "temperature": "cool",
     "neutral": false
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 308
   },
   {
    "id": "item-9033_2",
@@ -867,7 +937,9 @@
     "hue": 38,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 97
   },
   {
    "id": "item-9050",
@@ -891,7 +963,9 @@
     "hue": 40,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 108
   },
   {
    "id": "item-9051_2",
@@ -915,7 +989,9 @@
     "hue": 198,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 379
   },
   {
    "id": "item-9052_2",
@@ -939,7 +1015,9 @@
     "hue": 295,
     "temperature": "cool",
     "neutral": false
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 379
   },
   {
    "id": "item-9053",
@@ -963,7 +1041,9 @@
     "hue": 222,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 438
   },
   {
    "id": "item-9054",
@@ -987,7 +1067,9 @@
     "hue": 219,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 371
   },
   {
    "id": "item-9070",
@@ -1011,7 +1093,9 @@
     "hue": 24,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 369
   },
   {
    "id": "item-9091",
@@ -1035,7 +1119,9 @@
     "hue": 201,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 68
   },
   {
    "id": "item-9096",
@@ -1059,7 +1145,9 @@
     "hue": 22,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 221
   },
   {
    "id": "item-9079",
@@ -1083,7 +1171,9 @@
     "hue": 210,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 84
   },
   {
    "id": "item-9085",
@@ -1107,7 +1197,9 @@
     "hue": 90,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 217
   },
   {
    "id": "item-9087",
@@ -1131,7 +1223,9 @@
     "hue": 223,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 462
   },
   {
    "id": "item-9055",
@@ -1155,7 +1249,9 @@
     "hue": 200,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 247
   },
   {
    "id": "item-9056",
@@ -1179,7 +1275,9 @@
     "hue": 226,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 381
   },
   {
    "id": "item-9058_2",
@@ -1203,7 +1301,9 @@
     "hue": 229,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 525
   },
   {
    "id": "item-9059_2",
@@ -1227,7 +1327,9 @@
     "hue": 223,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 503
   },
   {
    "id": "item-9061",
@@ -1251,7 +1353,9 @@
     "hue": 231,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 294
   },
   {
    "id": "item-9100_2",
@@ -1275,7 +1379,9 @@
     "hue": 223,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 431
   },
   {
    "id": "item-9060_2",
@@ -1299,7 +1405,9 @@
     "hue": 228,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 535
   },
   {
    "id": "item-9063",
@@ -1323,7 +1431,9 @@
     "hue": 207,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 370
   },
   {
    "id": "item-9064",
@@ -1347,7 +1457,9 @@
     "hue": 203,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 67
   },
   {
    "id": "item-9066_2",
@@ -1371,7 +1483,9 @@
     "hue": 160,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 82
   },
   {
    "id": "item-9072",
@@ -1395,7 +1509,9 @@
     "hue": 60,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 87
   },
   {
    "id": "item-9081",
@@ -1419,7 +1535,9 @@
     "hue": 234,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 502
   },
   {
    "id": "item-9082",
@@ -1443,7 +1561,9 @@
     "hue": 90,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 187
   },
   {
    "id": "item-9083",
@@ -1467,7 +1587,9 @@
     "hue": 100,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 99
   },
   {
    "id": "item-9084_2",
@@ -1491,7 +1613,9 @@
     "hue": 43,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 61
   },
   {
    "id": "item-9097",
@@ -1515,7 +1639,9 @@
     "hue": 2,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 300
   },
   {
    "id": "item-9098_2",
@@ -1539,7 +1665,9 @@
     "hue": 216,
     "temperature": "cool",
     "neutral": false
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 234
   },
   {
    "id": "item-9034",
@@ -1563,7 +1691,9 @@
     "hue": 44,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 53
   },
   {
    "id": "item-9067_2",
@@ -1587,7 +1717,9 @@
     "hue": 180,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 441
   },
   {
    "id": "item-9069",
@@ -1611,7 +1743,9 @@
     "hue": 232,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 427
   },
   {
    "id": "item-9071",
@@ -1636,7 +1770,9 @@
     "hue": 195,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 377
   },
   {
    "id": "item-9073",
@@ -1660,7 +1796,9 @@
     "hue": 218,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 370
   },
   {
    "id": "item-9077",
@@ -1685,7 +1823,9 @@
     "hue": 229,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 428
   },
   {
    "id": "item-9078",
@@ -1709,7 +1849,9 @@
     "hue": 312,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 437
   },
   {
    "id": "item-9088_2",
@@ -1734,7 +1876,9 @@
     "hue": 231,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 467
   },
   {
    "id": "item-9094_2",
@@ -1758,7 +1902,9 @@
     "hue": 224,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 418
   },
   {
    "id": "item-9095",
@@ -1782,7 +1928,9 @@
     "hue": 120,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 384
   },
   {
    "id": "item-9099_2",
@@ -1806,7 +1954,9 @@
     "hue": 240,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 225
   },
   {
    "id": "item-9104_2",
@@ -1830,7 +1980,9 @@
     "hue": 216,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 399
   },
   {
    "id": "item-9105_2",
@@ -1854,7 +2006,9 @@
     "hue": 198,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 376
   },
   {
    "id": "item-9106",
@@ -1879,7 +2033,9 @@
     "hue": 27,
     "temperature": "warm",
     "neutral": false
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 352
   },
   {
    "id": "item-9107",
@@ -1903,7 +2059,9 @@
     "hue": 48,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 426
   },
   {
    "id": "item-9108",
@@ -1927,7 +2085,9 @@
     "hue": 72,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 213
   },
   {
    "id": "item-9109",
@@ -1951,7 +2111,9 @@
     "hue": 44,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 154
   },
   {
    "id": "item-9110",
@@ -1976,7 +2138,9 @@
     "hue": 14,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 458
   },
   {
    "id": "item-9111",
@@ -2000,7 +2164,9 @@
     "hue": 232,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 506
   },
   {
    "id": "item-9112",
@@ -2024,7 +2190,9 @@
     "hue": 226,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 521
   },
   {
    "id": "item-9113",
@@ -2049,7 +2217,9 @@
     "hue": 260,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 460
   },
   {
    "id": "item-9114",
@@ -2073,7 +2243,9 @@
     "hue": 35,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 80
   },
   {
    "id": "item-9115",
@@ -2097,7 +2269,9 @@
     "hue": 0,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 493
   },
   {
    "id": "item-9116",
@@ -2121,7 +2295,9 @@
     "hue": 15,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 506
   },
   {
    "id": "item-9117",
@@ -2145,7 +2321,9 @@
     "hue": 225,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 421
   },
   {
    "id": "item-9118",
@@ -2169,7 +2347,9 @@
     "hue": 216,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 341
   },
   {
    "id": "item-9119",
@@ -2193,7 +2373,9 @@
     "hue": 216,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 339
   },
   {
    "id": "item-9120",
@@ -2217,7 +2399,9 @@
     "hue": 60,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 236
   },
   {
    "id": "item-9121",
@@ -2241,7 +2425,9 @@
     "hue": 180,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 79
   },
   {
    "id": "item-9122_2",
@@ -2265,7 +2451,9 @@
     "hue": 55,
     "temperature": "warm",
     "neutral": false
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 221
   },
   {
    "id": "item-9123_2",
@@ -2289,7 +2477,9 @@
     "hue": 60,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 232
   },
   {
    "id": "item-9124_2",
@@ -2313,7 +2503,9 @@
     "hue": 37,
     "temperature": "warm",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 11
   },
   {
    "id": "item-9125_2",
@@ -2337,7 +2529,9 @@
     "hue": 235,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 565
   },
   {
    "id": "item-9126_2",
@@ -2361,7 +2555,9 @@
     "hue": 193,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 347
   },
   {
    "id": "item-9127",
@@ -2385,7 +2581,9 @@
     "hue": 233,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 507
   },
   {
    "id": "item-9128_2",
@@ -2409,7 +2607,9 @@
     "hue": 35,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": false,
+   "floorDistance": 57
   },
   {
    "id": "item-9129_2",
@@ -2433,7 +2633,9 @@
     "hue": 17,
     "temperature": "warm",
     "neutral": false
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 298
   },
   {
    "id": "item-9130_2",
@@ -2457,7 +2659,9 @@
     "hue": 90,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 259
   },
   {
    "id": "item-9131_2",
@@ -2481,7 +2685,9 @@
     "hue": 220,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 435
   },
   {
    "id": "item-9132_2",
@@ -2505,7 +2711,9 @@
     "hue": 240,
     "temperature": "cool",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 514
   },
   {
    "id": "item-9133",
@@ -2529,7 +2737,9 @@
     "hue": 227,
     "temperature": "neutral",
     "neutral": true
-   }
+   },
+   "cutoutOk": true,
+   "floorDistance": 398
   }
  ],
  "skipped": [],

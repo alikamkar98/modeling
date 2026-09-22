@@ -7,7 +7,6 @@ import { contrastRatio, luminance, isNeutral, harmonyOf, contrastOf, hueDistance
 import { requirementsFrom, manualWeather, describeCode, buildUrl } from '../src/weather.js';
 import { resolveOccasion, OCCASIONS } from '../src/occasions.js';
 import { suggestOutfits } from '../src/outfits.js';
-import { renderFigure } from '../src/figure.js';
 
 const demo = JSON.parse(readFileSync(new URL('../data/demo-wardrobe.json', import.meta.url)));
 const WARDROBE = demo.items;
@@ -194,16 +193,3 @@ test('manual fallback is marked as manual', () => {
   assert.match(w.description, /by hand/);
 });
 
-test('figure renders a body and names what it is wearing', () => {
-  // The garments themselves are photographs cut out in the browser, so the
-  // server-rendered markup is the body plus an accessible label.
-  const req = requirementsFrom({ feelsLike: 15, precipitationProbability: 0, precipitation: 0, windSpeed: 2, code: 0 });
-  const result = suggestOutfits(WARDROBE, 'university', req);
-  const items = result.outfits[0].items;
-  const html = renderFigure(items);
-  assert.match(html, /class="figure"/);
-  assert.match(html, /<svg class="figure__body"/);
-  for (const item of items) {
-    assert.ok(html.includes(item.name), `figure label is missing ${item.name}`);
-  }
-});

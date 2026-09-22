@@ -182,7 +182,7 @@ function cartesian(lists) {
  *   A failure names the empty slot rather than returning nothing, because
  *   "you own no swimwear" is the useful answer to "what do I wear swimming?".
  */
-export function suggestOutfits(wardrobe, occasionKey, weatherRequirements, { count = 3, beam = 6 } = {}) {
+export function suggestOutfits(wardrobe, occasionKey, weatherRequirements, { count = 3, beam = 8 } = {}) {
   const profile = OCCASIONS[occasionKey];
   if (!profile) return { ok: false, reason: `unknown occasion "${occasionKey}"`, missing: [] };
 
