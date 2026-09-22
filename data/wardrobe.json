@@ -2,7 +2,7 @@
  "version": 1,
  "source": "Google Drive folder: clothes",
  "classifiedAt": "2026-09-22",
- "note": "Classified from 105 photos. Socks are catalogued but not used in outfit slots.",
+ "note": "Classified from 105 photos. Socks are catalogued but never fill an outfit slot. Items with duplicateOf are a second photo of a garment already in the catalog and are excluded from suggestions.",
  "items": [
   {
    "id": "item-9026",
@@ -360,7 +360,7 @@
    "id": "item-9044",
    "file": "IMG_9044.jpg",
    "image": "assets/items/IMG_9044.jpg",
-   "name": "black t-shirt",
+   "name": "black oversized t-shirt",
    "category": "top",
    "subtype": "t-shirt",
    "hex": "#171b29",
@@ -698,7 +698,7 @@
    "id": "item-9060_2",
    "file": "IMG_9060_2.jpg",
    "image": "assets/items/IMG_9060_2.jpg",
-   "name": "navy short-sleeve shirt",
+   "name": "black boxy short-sleeve shirt",
    "category": "top",
    "subtype": "short-sleeve shirt",
    "hex": "#141825",
@@ -1073,7 +1073,8 @@
    "pattern": "solid",
    "warmth": 4,
    "formality": 4,
-   "style": "smart-casual"
+   "style": "smart-casual",
+   "duplicateOf": "item-9109"
   },
   {
    "id": "item-9111",
@@ -1158,7 +1159,7 @@
    "id": "item-9117",
    "file": "IMG_9117.jpg",
    "image": "assets/items/IMG_9117.jpg",
-   "name": "black cycling shoes",
+   "name": "black MTB cycling shoes",
    "category": "shoes",
    "subtype": "cycling shoes",
    "hex": "#1f2022",
@@ -1171,7 +1172,7 @@
    "id": "item-9118",
    "file": "IMG_9118.jpg",
    "image": "assets/items/IMG_9118.jpg",
-   "name": "black cycling shoes",
+   "name": "black road cycling shoes",
    "category": "shoes",
    "subtype": "cycling shoes",
    "hex": "#121417",
@@ -1184,7 +1185,7 @@
    "id": "item-9119",
    "file": "IMG_9119.jpg",
    "image": "assets/items/IMG_9119.jpg",
-   "name": "black cycling shoes",
+   "name": "black gravel cycling shoes",
    "category": "shoes",
    "subtype": "cycling shoes",
    "hex": "#15171a",

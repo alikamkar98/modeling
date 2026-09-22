@@ -42,7 +42,13 @@ export function toggleRetired(id) {
   return nowRetired;
 }
 
-/** The wardrobe the engine should actually pick from. */
+/**
+ * The wardrobe the engine should actually pick from.
+ *
+ * Excludes retired items and duplicate photographs — a second shot of a
+ * garment already in the catalog is not a second garment, and suggesting it as
+ * one would quietly overstate what the wearer owns.
+ */
 export function activeItems(items, retired = read()) {
-  return items.filter((i) => !retired.has(i.id));
+  return items.filter((i) => !retired.has(i.id) && !i.duplicateOf);
 }

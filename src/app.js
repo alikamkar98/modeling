@@ -128,9 +128,13 @@ function suggest(destination) {
     : `<p class="muted">I don't recognise “${destination}”, so I've treated it as everyday wear.
        Try one of the buttons above if that's wrong.</p>`;
 
-  const retiredCount = state.wardrobe.length - available.length;
+  // Count only what the wearer chose to retire. Duplicate photos are also
+  // excluded, but they aren't clothes being held back — saying so would
+  // misreport the wardrobe.
+  const retired = retiredIds();
+  const retiredCount = state.wardrobe.filter((i) => retired.has(i.id) && !i.duplicateOf).length;
   const retiredNote = retiredCount
-    ? `<p class="muted">${retiredCount} retired item${retiredCount === 1 ? '' : 's'} left out — bring them back under My clothes.</p>`
+    ? `<p class="muted">${retiredCount} retired item${retiredCount === 1 ? '' : 's'} left out — bring ${retiredCount === 1 ? 'it' : 'them'} back under My clothes.</p>`
     : '';
 
   if (!result.ok) {
@@ -180,9 +184,10 @@ function renderCloset() {
       <div class="card__body">
         <div class="card__name">${i.name}</div>
         <div class="card__meta">${i.category} · warmth ${i.warmth} · ${i.style ?? '—'}</div>
-        <button class="card__retire" data-retire="${i.id}">
+        ${i.duplicateOf ? '<div class="card__meta">duplicate photo — not suggested</div>' : ''}
+        ${i.duplicateOf ? '' : `<button class="card__retire" data-retire="${i.id}">
           ${retired.has(i.id) ? 'Bring back' : 'Never suggest'}
-        </button>
+        </button>`}
       </div>
     </div>`).join('');
 

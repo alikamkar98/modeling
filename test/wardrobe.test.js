@@ -8,6 +8,7 @@ import { readFileSync } from 'node:fs';
 import { requirementsFrom } from '../src/weather.js';
 import { suggestOutfits } from '../src/outfits.js';
 import { OCCASIONS } from '../src/occasions.js';
+import { activeItems } from '../src/retired.js';
 
 const data = JSON.parse(readFileSync(new URL('../data/wardrobe.json', import.meta.url)));
 const W = data.items;
@@ -130,4 +131,27 @@ test('retiring an item keeps it out of every suggestion', () => {
     assert.ok(!outfit.items.some((i) => i.id === picked.id),
       `${picked.name} was retired but still suggested`);
   }
+});
+
+test('duplicate photographs never reach a suggestion', () => {
+  // 9110 is the same pair of boots as 9109, shot from another angle. Counting
+  // it as a second garment would overstate the wardrobe.
+  const dupes = W.filter((i) => i.duplicateOf);
+  assert.ok(dupes.length > 0, 'expected at least one flagged duplicate');
+  for (const d of dupes) {
+    assert.ok(W.some((i) => i.id === d.duplicateOf), `${d.id} points at a missing original`);
+  }
+
+  const active = activeItems(W, new Set());
+  for (const d of dupes) {
+    assert.ok(!active.some((i) => i.id === d.id), `${d.id} is still selectable`);
+  }
+});
+
+test('no two active garments share a name', () => {
+  // Two identically labelled items in a result are indistinguishable to the
+  // reader, whether or not they are the same garment.
+  const names = activeItems(W, new Set()).map((i) => i.name);
+  const dupes = names.filter((n, idx) => names.indexOf(n) !== idx);
+  assert.deepEqual([...new Set(dupes)], [], 'duplicate names among active items');
 });
