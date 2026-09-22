@@ -36,6 +36,23 @@ GitHub Pages) the live forecast works normally.
 `ORDER` list: concatenation replaces the import graph, so an omitted file
 produces a page that throws on load with no other symptom.
 
+### GitHub Pages
+
+Pages serves the repository as-is, so the live weather works and there is
+nothing to build:
+
+1. **Settings → Pages**
+2. **Source: Deploy from a branch**
+3. Branch **`main`**, folder **`/ (root)`**, then **Save**
+
+The URL is `https://alikamkar98.github.io/modeling/` a minute or so later.
+
+Note that Pages publishes whatever is in the branch — including
+`assets/items/`, i.e. photographs of your clothes. On a public repository those
+are already readable by anyone with the URL; Pages only makes them easier to
+find. Make the repository private if that matters (Pages on a private
+repository needs a paid GitHub plan).
+
 ## Your wardrobe
 
 105 garments, classified from photos in the `clothes` Google Drive folder. The
