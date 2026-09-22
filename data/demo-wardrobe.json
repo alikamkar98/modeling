@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "demo": true,
+  "note": "Placeholder garments so the app can be explored before the real wardrobe is classified. These are NOT your clothes.",
+  "items": [
+    { "id": "demo-01", "file": null, "name": "white t-shirt", "category": "top", "subtype": "t-shirt", "hex": "#f2f2f0", "pattern": "solid", "warmth": 1, "formality": 2, "style": "casual" },
+    { "id": "demo-02", "file": null, "name": "navy oxford shirt", "category": "top", "subtype": "oxford shirt", "hex": "#26354f", "pattern": "solid", "warmth": 2, "formality": 4, "style": "smart-casual" },
+    { "id": "demo-03", "file": null, "name": "grey sweatshirt", "category": "top", "subtype": "sweatshirt", "hex": "#8a8d91", "pattern": "solid", "warmth": 3, "formality": 2, "style": "casual" },
+    { "id": "demo-04", "file": null, "name": "black sports tee", "category": "top", "subtype": "t-shirt", "hex": "#1c1c1e", "pattern": "solid", "warmth": 1, "formality": 1, "style": "sporty" },
+    { "id": "demo-05", "file": null, "name": "rust knit jumper", "category": "top", "subtype": "jumper", "hex": "#a4552c", "pattern": "solid", "warmth": 4, "formality": 3, "style": "casual" },
+
+    { "id": "demo-06", "file": null, "name": "beige chinos", "category": "bottom", "subtype": "chinos", "hex": "#c8b393", "pattern": "solid", "warmth": 2, "formality": 4, "style": "smart-casual" },
+    { "id": "demo-07", "file": null, "name": "dark jeans", "category": "bottom", "subtype": "jeans", "hex": "#2f3b4d", "pattern": "solid", "warmth": 3, "formality": 3, "style": "casual" },
+    { "id": "demo-08", "file": null, "name": "black running shorts", "category": "bottom", "subtype": "shorts", "hex": "#212124", "pattern": "solid", "warmth": 1, "formality": 1, "style": "sporty" },
+    { "id": "demo-09", "file": null, "name": "charcoal trousers", "category": "bottom", "subtype": "trousers", "hex": "#3a3a3e", "pattern": "solid", "warmth": 3, "formality": 5, "style": "formal" },
+
+    { "id": "demo-10", "file": null, "name": "olive field jacket", "category": "outerwear", "subtype": "jacket", "hex": "#5a6042", "pattern": "solid", "warmth": 4, "formality": 3, "style": "outdoor", "waterproof": true },
+    { "id": "demo-11", "file": null, "name": "navy wool coat", "category": "outerwear", "subtype": "coat", "hex": "#222c3d", "pattern": "solid", "warmth": 5, "formality": 4, "style": "smart-casual" },
+
+    { "id": "demo-12", "file": null, "name": "white sneakers", "category": "shoes", "subtype": "sneakers", "hex": "#ececea", "pattern": "solid", "warmth": 2, "formality": 3, "style": "casual" },
+    { "id": "demo-13", "file": null, "name": "black running shoes", "category": "shoes", "subtype": "running shoes", "hex": "#1a1a1c", "pattern": "solid", "warmth": 2, "formality": 1, "style": "sporty" },
+    { "id": "demo-14", "file": null, "name": "brown leather shoes", "category": "shoes", "subtype": "derby shoes", "hex": "#5b3a24", "pattern": "solid", "warmth": 3, "formality": 5, "style": "formal" },
+    { "id": "demo-15", "file": null, "name": "pool sandals", "category": "shoes", "subtype": "sandals", "hex": "#2b6ca3", "pattern": "solid", "warmth": 1, "formality": 1, "style": "sporty", "openToe": true },
+
+    { "id": "demo-16", "file": null, "name": "navy swim shorts", "category": "swimwear", "subtype": "swim shorts", "hex": "#1f4e79", "pattern": "solid", "warmth": 1, "formality": 1, "style": "sporty" }
+  ],
+  "skipped": []
+}

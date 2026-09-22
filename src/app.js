@@ -1,0 +1,248 @@
+import { fetchWeather, manualWeather, requirementsFrom, LINZ } from './weather.js';
+import { resolveOccasion, QUICK_PICKS, OCCASIONS } from './occasions.js';
+import { suggestOutfits } from './outfits.js';
+import { renderFigure } from './figure.js';
+import { loadPhotoUrls, storePhotos } from './photos.js';
+
+const state = {
+  wardrobe: [],
+  isDemo: false,
+  weather: null,
+  photos: new Map(),
+  lastDestination: '',
+  closetFilter: 'all',
+};
+
+const $ = (sel) => document.querySelector(sel);
+
+/* ---------------------------------------------------------------- data -- */
+
+async function loadWardrobe() {
+  try {
+    const res = await fetch('data/wardrobe.json', { cache: 'no-store' });
+    const data = await res.json();
+    if (data.items?.length) return { items: data.items, isDemo: false };
+  } catch {
+    // fall through to the demo set
+  }
+  try {
+    const res = await fetch('data/demo-wardrobe.json', { cache: 'no-store' });
+    const data = await res.json();
+    return { items: data.items ?? [], isDemo: true };
+  } catch {
+    return { items: [], isDemo: false };
+  }
+}
+
+/* ------------------------------------------------------------- weather -- */
+
+function renderWeather() {
+  const el = $('#weather');
+  const w = state.weather;
+
+  if (!w) {
+    el.className = 'weather weather--manual';
+    el.innerHTML = `
+      <span class="weather__desc">Couldn't reach the weather service.</span>
+      <span class="weather__meta">Pick roughly how it feels outside:</span>
+      <span class="chips" id="manual-weather">
+        ${['cold', 'cool', 'mild', 'warm', 'hot']
+          .map((k) => `<button class="chip" data-manual="${k}">${k}</button>`).join('')}
+      </span>`;
+    el.querySelectorAll('[data-manual]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        state.weather = manualWeather(btn.dataset.manual);
+        renderWeather();
+        if (state.lastDestination) suggest(state.lastDestination);
+      });
+    });
+    return;
+  }
+
+  const flags = [];
+  const req = requirementsFrom(w);
+  if (req.needsRainProtection) flags.push('rain likely');
+  if (req.needsWindLayer) flags.push('windy');
+  if (req.needsSnowFootwear) flags.push('snow');
+
+  el.className = `weather${w.source === 'manual' ? ' weather--manual' : ''}`;
+  el.innerHTML = `
+    <span class="weather__temp">${Math.round(w.temperature)}°C</span>
+    <span class="weather__desc">${w.description} in ${w.place}</span>
+    <span class="weather__meta">feels like ${Math.round(w.feelsLike)}°${
+      w.high != null ? ` · ${Math.round(w.low)}–${Math.round(w.high)}°` : ''}</span>
+    ${flags.length ? `<span class="weather__flag">${flags.join(' · ')}</span>` : ''}
+    ${w.source === 'manual' ? '<span class="weather__meta">(set by hand — live weather unavailable)</span>' : ''}`;
+}
+
+/* ------------------------------------------------------------- results -- */
+
+function thumb(item) {
+  const url = item.file ? state.photos.get(item.file) : null;
+  if (url) return `<img src="${url}" alt="${item.name}" loading="lazy">`;
+  return `<span class="item__swatch" style="background:${item.hex}"></span>`;
+}
+
+function outfitCard(outfit, index) {
+  const items = outfit.items;
+  return `
+    <article class="outfit">
+      <div class="outfit__figure">${renderFigure(items, { width: 150, height: 225 })}</div>
+      <div>
+        <p class="outfit__rank">${index === 0 ? 'Best match' : `Option ${index + 1}`}</p>
+        <p class="outfit__why">${outfit.rationale.join(' · ')}</p>
+        ${outfit.warnings.length
+          ? `<p class="outfit__warn">⚠ ${outfit.warnings.join(' · ')}</p>` : ''}
+        <ul class="items">
+          ${items.map((i) => `
+            <li class="item">
+              <span class="item__thumb">${thumb(i)}</span>
+              <span class="item__name">${i.name}</span>
+            </li>`).join('')}
+        </ul>
+        <div class="palette" aria-hidden="true">
+          ${items.map((i) => `<span style="background:${i.hex}"></span>`).join('')}
+        </div>
+      </div>
+    </article>`;
+}
+
+function suggest(destination) {
+  state.lastDestination = destination;
+  const results = $('#results');
+
+  if (!state.wardrobe.length) {
+    results.innerHTML = `<div class="notice">
+      <strong>No clothes yet.</strong>
+      <p class="muted">The wardrobe catalog is empty, so there is nothing to build an outfit from.</p>
+    </div>`;
+    return;
+  }
+
+  const { key, confident } = resolveOccasion(destination);
+  const profile = OCCASIONS[key];
+  const req = state.weather ? requirementsFrom(state.weather) : null;
+  const result = suggestOutfits(state.wardrobe, key, req);
+
+  const header = confident
+    ? `<p class="muted">${profile.label} — ${profile.note}</p>`
+    : `<p class="muted">I don't recognise “${destination}”, so I've treated it as everyday wear.
+       Try one of the buttons above if that's wrong.</p>`;
+
+  if (!result.ok) {
+    results.innerHTML = `${header}
+      <div class="notice">
+        <strong>I can't put a full outfit together for that.</strong>
+        <ul>${result.missing.map((m) => `<li>${m}</li>`).join('')}</ul>
+      </div>`;
+    return;
+  }
+
+  results.innerHTML = header + result.outfits.map(outfitCard).join('');
+}
+
+/* -------------------------------------------------------------- closet -- */
+
+function renderCloset() {
+  const status = $('#closet-status');
+  const grid = $('#closet');
+
+  if (!state.wardrobe.length) {
+    status.textContent = 'No clothes catalogued yet.';
+    grid.innerHTML = '';
+    return;
+  }
+
+  const withPhotos = state.wardrobe.filter((i) => i.file && state.photos.has(i.file)).length;
+  status.textContent = state.isDemo
+    ? 'Showing placeholder clothes — these are not yours. Your real wardrobe replaces them once it is classified.'
+    : `${state.wardrobe.length} items · ${withPhotos} with photos on this device`;
+
+  const cats = ['all', ...new Set(state.wardrobe.map((i) => i.category))];
+  $('#closet-filters').innerHTML = cats
+    .map((c) => `<button class="chip${c === state.closetFilter ? ' is-on' : ''}" data-cat="${c}">${c}</button>`)
+    .join('');
+  $('#closet-filters').querySelectorAll('[data-cat]').forEach((btn) => {
+    btn.addEventListener('click', () => { state.closetFilter = btn.dataset.cat; renderCloset(); });
+  });
+
+  const shown = state.closetFilter === 'all'
+    ? state.wardrobe
+    : state.wardrobe.filter((i) => i.category === state.closetFilter);
+
+  grid.innerHTML = shown.map((i) => `
+    <div class="card">
+      <div class="card__media">${thumb(i)}</div>
+      <div class="card__body">
+        <div class="card__name">${i.name}</div>
+        <div class="card__meta">${i.category} · warmth ${i.warmth} · ${i.style ?? '—'}</div>
+      </div>
+    </div>`).join('');
+}
+
+/* ---------------------------------------------------------------- init -- */
+
+function wireTabs() {
+  document.querySelectorAll('.tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', String(on));
+      });
+      $('#tab-suggest').classList.toggle('is-hidden', tab.dataset.tab !== 'suggest');
+      $('#tab-closet').classList.toggle('is-hidden', tab.dataset.tab !== 'closet');
+    });
+  });
+}
+
+function wireAsk() {
+  $('#quick').innerHTML = QUICK_PICKS
+    .map((p) => `<button class="chip" data-pick="${p}">${p}</button>`).join('');
+  $('#quick').querySelectorAll('[data-pick]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      $('#destination').value = btn.dataset.pick;
+      suggest(btn.dataset.pick);
+    });
+  });
+
+  $('#ask-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const value = $('#destination').value.trim();
+    if (value) suggest(value);
+  });
+}
+
+function wirePhotoInput() {
+  $('#photo-input').addEventListener('change', async (e) => {
+    const files = [...e.target.files];
+    if (!files.length) return;
+    $('#closet-status').textContent = `Saving ${files.length} photos…`;
+    await storePhotos(files);
+    state.photos = await loadPhotoUrls();
+    renderCloset();
+    if (state.lastDestination) suggest(state.lastDestination);
+    e.target.value = '';
+  });
+}
+
+async function init() {
+  wireTabs();
+  wireAsk();
+  wirePhotoInput();
+
+  const [{ items, isDemo }, photos] = await Promise.all([loadWardrobe(), loadPhotoUrls()]);
+  state.wardrobe = items;
+  state.isDemo = isDemo;
+  state.photos = photos;
+  renderCloset();
+
+  try {
+    state.weather = await fetchWeather(LINZ);
+  } catch {
+    state.weather = null;   // renderWeather offers the manual fallback
+  }
+  renderWeather();
+}
+
+init();

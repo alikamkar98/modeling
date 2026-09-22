@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "source": "Google Drive folder: clothes",
+  "classifiedAt": null,
+  "note": "Empty until the photos have been classified. See scripts/ingest.md.",
+  "items": [],
+  "skipped": []
+}

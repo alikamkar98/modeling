@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wardrobe</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<header class="bar">
+  <h1>Wardrobe</h1>
+  <nav class="tabs" role="tablist">
+    <button class="tab is-active" data-tab="suggest" role="tab" aria-selected="true">Suggest</button>
+    <button class="tab" data-tab="closet" role="tab" aria-selected="false">My clothes</button>
+  </nav>
+</header>
+
+<main>
+  <section id="tab-suggest" class="panel">
+    <div id="weather" class="weather" aria-live="polite">
+      <span class="weather__loading">Checking the weather in Linz…</span>
+    </div>
+
+    <div class="ask">
+      <label for="destination" class="ask__label">Where are you going?</label>
+      <form id="ask-form" class="ask__row">
+        <input id="destination" name="destination" type="text" autocomplete="off"
+               placeholder="university, the gym, swimming, dinner…">
+        <button type="submit" class="btn btn--primary">Dress me</button>
+      </form>
+      <div id="quick" class="chips"></div>
+    </div>
+
+    <div id="results" class="results" aria-live="polite"></div>
+  </section>
+
+  <section id="tab-closet" class="panel is-hidden">
+    <div class="closet__intro">
+      <p id="closet-status" class="muted"></p>
+      <label class="btn btn--ghost">
+        Add photos from this device
+        <input id="photo-input" type="file" accept="image/*" multiple hidden>
+      </label>
+    </div>
+    <div id="closet-filters" class="chips"></div>
+    <div id="closet" class="grid"></div>
+  </section>
+</main>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>
