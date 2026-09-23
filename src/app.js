@@ -1,5 +1,6 @@
-import { fetchWeather, manualWeather, requirementsFrom, LINZ } from './weather.js';
-import { resolveOccasion, QUICK_PICKS, OCCASIONS } from './occasions.js';
+import { fetchWeather, manualWeather, requirementsFrom, climateWeather, PLACES } from './weather.js';
+import { resolveOccasion, OCCASIONS, OCCASION_ORDER } from './occasions.js';
+import { loadMoods, saveMoods, allMoods, extractPalette, moodFromPalette } from './moods.js';
 import { suggestOutfits } from './outfits.js';
 import { renderCollage, composeCollage } from './collage.js';
 import { retiredIds, toggleRetired, activeItems } from './retired.js';
@@ -16,6 +17,9 @@ const state = {
   // set that happens to score similarly.
   ranked: [],
   page: 0,
+  place: 'linz',
+  date: new Date().toISOString().slice(0, 10),
+  moods: loadMoods(),
 };
 
 const PER_PAGE = 3;
@@ -50,7 +54,7 @@ function renderWeather() {
   if (!w) {
     el.className = 'weather weather--manual';
     el.innerHTML = `
-      <span class="weather__desc">Couldn't reach the weather service.</span>
+      <span class="weather__desc">No weather for ${PLACES[state.place].name}.</span>
       <span class="weather__meta">Pick roughly how it feels outside:</span>
       <span class="chips" id="manual-weather">
         ${['cold', 'cool', 'mild', 'warm', 'hot']
@@ -58,7 +62,7 @@ function renderWeather() {
       </span>`;
     el.querySelectorAll('[data-manual]').forEach((btn) => {
       btn.addEventListener('click', () => {
-        state.weather = manualWeather(btn.dataset.manual);
+        state.weather = manualWeather(btn.dataset.manual, PLACES[state.place]);
         renderWeather();
         if (state.lastDestination) suggest(state.lastDestination);
       });
@@ -75,11 +79,56 @@ function renderWeather() {
   el.className = `weather${w.source === 'manual' ? ' weather--manual' : ''}`;
   el.innerHTML = `
     <span class="weather__temp">${Math.round(w.temperature)}°C</span>
-    <span class="weather__desc">${w.description} in ${w.place}</span>
+    <span class="weather__desc">${w.description} · ${w.place}${w.date ? `, ${w.date}` : ''}</span>
     <span class="weather__meta">feels like ${Math.round(w.feelsLike)}°${
       w.high != null ? ` · ${Math.round(w.low)}–${Math.round(w.high)}°` : ''}</span>
     ${flags.length ? `<span class="weather__flag">${flags.join(' · ')}</span>` : ''}
-    ${w.source === 'manual' ? '<span class="weather__meta">(set by hand — live weather unavailable)</span>' : ''}`;
+    ${{ manual: 'set by hand', climate: 'climate average — no live forecast here', checked: 'looked up for this trip' }[w.source]
+      ? `<span class="weather__meta">(${{ manual: 'set by hand', climate: 'climate average — no live forecast here', checked: 'looked up for this trip' }[w.source]})</span>` : ''}
+    <span class="chips weather__adjust">
+      ${['colder', 'warmer', w.precipitationProbability >= 40 ? 'dry' : 'rain']
+        .map((k) => `<button class="chip" data-adjust="${k}">${k}</button>`).join('')}
+    </span>`;
+  el.querySelectorAll('[data-adjust]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const k = btn.dataset.adjust;
+      const w2 = { ...state.weather };
+      if (k === 'colder' || k === 'warmer') {
+        const d = k === 'colder' ? -3 : 3;
+        w2.temperature += d; w2.feelsLike += d;
+      } else {
+        w2.precipitationProbability = k === 'rain' ? 80 : 0;
+      }
+      state.weather = w2;
+      renderWeather();
+      rerun();
+    });
+  });
+}
+
+async function loadWeather() {
+  const place = PLACES[state.place];
+  const today = new Date().toISOString().slice(0, 10);
+  const days = (new Date(state.date) - new Date(today)) / 864e5;
+  $('#weather').innerHTML = `<span class="weather__loading">Checking ${place.name}…</span>`;
+  try {
+    if (days < 0 || days > 15) throw new Error('out of forecast range');
+    state.weather = await fetchWeather(place, { date: days === 0 ? null : state.date, timeoutMs: 5000 });
+  } catch {
+    // No network (or too far out): the month's climate, or a day looked up
+    // for this trip, is still far better than no weather at all.
+    state.weather = climateWeather(place, state.date);
+  }
+  renderWeather();
+  rerun();
+}
+
+function rerun() {
+  if (state.lastDestination) suggest(state.lastDestination);
+}
+
+function activeMood() {
+  return allMoods(state.moods).find((m) => m.id === state.moods.active) ?? null;
 }
 
 /* ------------------------------------------------------------- results -- */
@@ -97,7 +146,7 @@ function outfitCard(outfit, index, offset) {
     <article class="outfit">
       <div class="outfit__figure" data-outfit="${index}">${renderCollage(items, { id: index })}</div>
       <div>
-        <p class="outfit__rank">Outfit ${number}</p>
+        <p class="outfit__rank">${number} · ${outfit.name ?? ''}</p>
         <p class="outfit__why">${outfit.rationale.join(' · ')}</p>
         ${outfit.warnings.length
           ? `<p class="outfit__warn">⚠ ${outfit.warnings.join(' · ')}</p>` : ''}
@@ -131,12 +180,13 @@ function suggest(destination) {
   const profile = OCCASIONS[key];
   const req = state.weather ? requirementsFrom(state.weather) : null;
   const available = activeItems(state.wardrobe);
-  const result = suggestOutfits(available, key, req, { count: 15 });
+  const result = suggestOutfits(available, key, req, { count: 30, mood: activeMood() });
+  document.querySelectorAll('#quick [data-pick]').forEach((b) => b.classList.toggle('is-on', b.dataset.pick === key));
 
   const header = confident
     ? `<p class="muted">${profile.label} — ${profile.note}</p>`
     : `<p class="muted">I don't recognise “${destination}”, so I've treated it as everyday wear.
-       Try one of the buttons above if that's wrong.</p>`;
+       Pick one of the buttons above if that's wrong.</p>`;
 
   // Count only what the wearer chose to retire. Duplicate photos are also
   // excluded, but they aren't clothes being held back — saying so would
@@ -246,6 +296,76 @@ function renderCloset() {
   });
 }
 
+/* ---------------------------------------------------------------- moods -- */
+
+function renderMoods() {
+  const moods = allMoods(state.moods);
+  $('#mood-pick').innerHTML = '<option value="">No mood board</option>'
+    + moods.map((m) => `<option value="${m.id}"${m.id === state.moods.active ? ' selected' : ''}>${m.label}</option>`).join('');
+
+  $('#moods').innerHTML = moods.map((m) => `
+    <div class="mood${m.id === state.moods.active ? ' is-on' : ''}">
+      <button class="mood__pick" data-mood="${m.id}">
+        <span class="mood__swatches">${m.palette.map((h) => `<span style="background:${h}"></span>`).join('')}</span>
+        <span class="mood__label">${m.label}</span>
+      </button>
+      ${m.photos?.length ? `<div class="mood__photos">${m.photos.map((p) => `<img src="${p}" alt="">`).join('')}</div>` : ''}
+      ${m.custom ? `<button class="card__retire" data-mood-del="${m.id}">Delete</button>` : ''}
+    </div>`).join('');
+
+  $('#moods').querySelectorAll('[data-mood]').forEach((btn) => btn.addEventListener('click', () => {
+    state.moods.active = state.moods.active === btn.dataset.mood ? null : btn.dataset.mood;
+    saveMoods(state.moods); renderMoods(); rerun();
+  }));
+  $('#moods').querySelectorAll('[data-mood-del]').forEach((btn) => btn.addEventListener('click', () => {
+    state.moods.custom = state.moods.custom.filter((m) => m.id !== btn.dataset.moodDel);
+    if (state.moods.active === btn.dataset.moodDel) state.moods.active = null;
+    saveMoods(state.moods); renderMoods(); rerun();
+  }));
+}
+
+/** Shrink a photo, keep a small thumbnail, and sample its pixels. */
+function readPhoto(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const scale = 160 / Math.max(img.width, img.height);
+      const c = document.createElement('canvas');
+      c.width = Math.max(1, Math.round(img.width * scale));
+      c.height = Math.max(1, Math.round(img.height * scale));
+      const ctx = c.getContext('2d');
+      ctx.drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url);
+      resolve({ thumb: c.toDataURL('image/jpeg', 0.7), data: ctx.getImageData(0, 0, c.width, c.height).data });
+    };
+    img.onerror = reject;
+    img.src = url;
+  });
+}
+
+function wireMoodForm() {
+  $('#mood-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const files = [...$('#mood-files').files].slice(0, 8);
+    if (!files.length) return;
+    const photos = await Promise.all(files.map(readPhoto));
+    // One palette for the whole board: sample all photos together.
+    const merged = new Uint8ClampedArray(photos.reduce((n, p) => n + p.data.length, 0));
+    let o = 0;
+    for (const p of photos) { merged.set(p.data, o); o += p.data.length; }
+    const id = `custom-${Date.now()}`;
+    const mood = moodFromPalette(id, $('#mood-name').value.trim() || 'My board', extractPalette(merged, 6));
+    mood.photos = photos.map((p) => p.thumb);
+    state.moods.custom.push(mood);
+    state.moods.active = id;
+    saveMoods(state.moods);
+    $('#mood-form').reset();
+    renderMoods();
+    rerun();
+  });
+}
+
 /* ---------------------------------------------------------------- init -- */
 
 function wireTabs() {
@@ -258,18 +378,29 @@ function wireTabs() {
       });
       $('#tab-suggest').classList.toggle('is-hidden', tab.dataset.tab !== 'suggest');
       $('#tab-closet').classList.toggle('is-hidden', tab.dataset.tab !== 'closet');
+      $('#tab-mood').classList.toggle('is-hidden', tab.dataset.tab !== 'mood');
     });
   });
 }
 
 function wireAsk() {
-  $('#quick').innerHTML = QUICK_PICKS
-    .map((p) => `<button class="chip" data-pick="${p}">${p}</button>`).join('');
+  $('#quick').innerHTML = OCCASION_ORDER
+    .map((k) => `<button class="chip" data-pick="${k}">${OCCASIONS[k].label}</button>`).join('');
   $('#quick').querySelectorAll('[data-pick]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      $('#destination').value = btn.dataset.pick;
+      $('#destination').value = '';
       suggest(btn.dataset.pick);
     });
+  });
+
+  $('#place').addEventListener('change', (e) => { state.place = e.target.value; loadWeather(); });
+  $('#date').value = state.date;
+  $('#date').addEventListener('change', (e) => { state.date = e.target.value || state.date; loadWeather(); });
+  $('#mood-pick').addEventListener('change', (e) => {
+    state.moods.active = e.target.value || null;
+    saveMoods(state.moods);
+    renderMoods();
+    rerun();
   });
 
   $('#ask-form').addEventListener('submit', (e) => {
@@ -282,18 +413,15 @@ function wireAsk() {
 async function init() {
   wireTabs();
   wireAsk();
+  wireMoodForm();
+  renderMoods();
 
   const { items, isDemo } = await loadWardrobe();
   state.wardrobe = items;
   state.isDemo = isDemo;
   renderCloset();
 
-  try {
-    state.weather = await fetchWeather(LINZ);
-  } catch {
-    state.weather = null;   // renderWeather offers the manual fallback
-  }
-  renderWeather();
+  await loadWeather();
 }
 
 init();

@@ -10,25 +10,39 @@
 <header class="bar">
   <h1>Wardrobe</h1>
   <nav class="tabs" role="tablist">
-    <button class="tab is-active" data-tab="suggest" role="tab" aria-selected="true">Suggest</button>
+    <button class="tab is-active" data-tab="suggest" role="tab" aria-selected="true">Dress me</button>
     <button class="tab" data-tab="closet" role="tab" aria-selected="false">My clothes</button>
+    <button class="tab" data-tab="mood" role="tab" aria-selected="false">Mood board</button>
   </nav>
 </header>
 
 <main>
   <section id="tab-suggest" class="panel">
+    <div class="trip">
+      <label>Where
+        <select id="place">
+          <option value="linz">Linz</option>
+          <option value="vienna">Vienna</option>
+        </select>
+      </label>
+      <label>When <input id="date" type="date"></label>
+      <label>Style
+        <select id="mood-pick"><option value="">No mood board</option></select>
+      </label>
+    </div>
+
     <div id="weather" class="weather" aria-live="polite">
-      <span class="weather__loading">Checking the weather in Linz…</span>
+      <span class="weather__loading">Checking the weather…</span>
     </div>
 
     <div class="ask">
-      <label for="destination" class="ask__label">Where are you going?</label>
+      <p class="ask__label">What for?</p>
+      <div id="quick" class="chips"></div>
       <form id="ask-form" class="ask__row">
         <input id="destination" name="destination" type="text" autocomplete="off"
-               placeholder="university, the gym, swimming, dinner…">
+               placeholder="or type it: lecture, opera, job talk…">
         <button type="submit" class="btn btn--primary">Dress me</button>
       </form>
-      <div id="quick" class="chips"></div>
     </div>
 
     <div id="results" class="results" aria-live="polite"></div>
@@ -40,6 +54,16 @@
     </div>
     <div id="closet-filters" class="chips"></div>
     <div id="closet" class="grid"></div>
+  </section>
+
+  <section id="tab-mood" class="panel is-hidden">
+    <p class="muted">Pick the look you want to move towards — outfits whose colours and pieces match it rank higher. Add your stylist's pictures or any inspiration photos to make your own board.</p>
+    <div id="moods" class="moods"></div>
+    <form id="mood-form" class="mood-new">
+      <input id="mood-name" type="text" placeholder="Board name, e.g. “Stylist — autumn”" required>
+      <input id="mood-files" type="file" accept="image/*" multiple required>
+      <button type="submit" class="btn btn--primary">Make board from photos</button>
+    </form>
   </section>
 </main>
 

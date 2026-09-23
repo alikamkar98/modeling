@@ -18,7 +18,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 # Dependency order: each module may only use names defined above it, because
 # concatenation replaces the import graph.
-ORDER = ['color.js', 'occasions.js', 'weather.js', 'collage.js',
+ORDER = ['color.js', 'occasions.js', 'weather.js', 'collage.js', 'moods.js',
          'retired.js', 'outfits.js', 'app.js']
 
 

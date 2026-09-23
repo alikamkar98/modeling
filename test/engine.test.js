@@ -53,17 +53,17 @@ test('harmony: neighbouring hues beat distant ones', () => {
   assert.ok(analogous.score > awkward.score);
 });
 
-test('contrast: a flat mid-tone set scores below a light/dark one', () => {
-  const flat = contrastOf(['#7a7a7a', '#7d7d7d', '#787878']);
+test('contrast: different colours at one depth read muddy', () => {
+  // Navy beside near-black at the same lightness is the classic failed match.
+  const muddy = contrastOf(['#1f2a44', '#1c1c1e']);
   const structured = contrastOf(['#1c1c1e', '#ececea', '#5b3a24']);
-  assert.ok(flat.score < structured.score, 'muddy middle must lose to clear structure');
-  assert.ok(flat.score <= 0.5);
+  assert.ok(muddy.score < structured.score, 'muddy middle must lose to clear structure');
+  assert.ok(muddy.score < 0.7);
 });
 
-test('contrast: near-misses are penalised', () => {
-  // Two beiges that do not quite match read worse than a deliberate pairing.
-  const nearMiss = contrastOf(['#c8b393', '#bfae91']);
-  assert.ok(nearMiss.score < 0.7);
+test('contrast: a tonal set in one colour family is a deliberate look', () => {
+  assert.ok(contrastOf(['#7a7a7a', '#7d7d7d', '#787878']).tonal);
+  assert.ok(contrastOf(['#c8b393', '#bfae91']).score >= 0.85);
 });
 
 test('weather requirements scale with feels-like temperature', () => {
@@ -93,8 +93,8 @@ test('weather URL targets Linz and asks for feels-like', () => {
 test('destinations map to occasions, unknown text is flagged', () => {
   assert.equal(resolveOccasion('university').key, 'university');
   assert.equal(resolveOccasion('going to the JKU library').key, 'university');
-  assert.equal(resolveOccasion('gym').key, 'sport');
-  assert.equal(resolveOccasion('job interview').key, 'formal');
+  assert.equal(resolveOccasion('gym').key, 'gym');
+  assert.equal(resolveOccasion('job interview').key, 'interview');
 
   const vague = resolveOccasion('somewhere entirely unspecified');
   assert.equal(vague.confident, false, 'unrecognised text must not be passed off as a confident match');
@@ -157,7 +157,7 @@ test('unknown occasion is rejected cleanly', () => {
 
 test('cold weather pulls in an outer layer', () => {
   const req = requirementsFrom({ feelsLike: -2, precipitationProbability: 0, precipitation: 0, windSpeed: 5, code: 0 });
-  const result = suggestOutfits(WARDROBE, 'casual-out', req);
+  const result = suggestOutfits(WARDROBE, 'coffee', req);
   assert.equal(result.ok, true);
   assert.ok(result.outfits.every((o) => o.items.some((i) => i.category === 'outerwear')),
     'freezing weather must require outerwear');
@@ -165,7 +165,7 @@ test('cold weather pulls in an outer layer', () => {
 
 test('hot weather keeps the winter coat out', () => {
   const req = requirementsFrom({ feelsLike: 30, precipitationProbability: 0, precipitation: 0, windSpeed: 2, code: 0 });
-  const result = suggestOutfits(WARDROBE, 'casual-out', req);
+  const result = suggestOutfits(WARDROBE, 'coffee', req);
   assert.equal(result.ok, true);
   const warmthUsed = result.outfits.flatMap((o) => o.items).map((i) => i.warmth);
   assert.ok(Math.max(...warmthUsed) <= 3, 'nothing heavy should survive 30 degrees');
@@ -173,7 +173,7 @@ test('hot weather keeps the winter coat out', () => {
 
 test('formal occasions do not return gym clothes', () => {
   const req = requirementsFrom({ feelsLike: 16, precipitationProbability: 0, precipitation: 0, windSpeed: 2, code: 0 });
-  const result = suggestOutfits(WARDROBE, 'formal', req);
+  const result = suggestOutfits(WARDROBE, 'interview', req);
   assert.equal(result.ok, true);
   for (const outfit of result.outfits) {
     assert.ok(!outfit.items.some((i) => i.style === 'sporty'), 'sporty items must not reach a formal outfit');
@@ -193,3 +193,22 @@ test('manual fallback is marked as manual', () => {
   assert.match(w.description, /by hand/);
 });
 
+
+test('Vienna trip without network falls back to climate or a checked day', async () => {
+  const { climateWeather, VIENNA } = await import('../src/weather.js');
+  const checked = climateWeather(VIENNA, '2026-09-23');
+  assert.equal(checked.source, 'checked');
+  assert.equal(checked.place, 'Vienna');
+  const jan = climateWeather(VIENNA, '2027-01-15');
+  assert.equal(jan.source, 'climate');
+  assert.equal(requirementsFrom(jan).warmth.label, 'cold');
+});
+
+test('mood palette is pulled from pixels', async () => {
+  const { extractPalette } = await import('../src/moods.js');
+  const data = new Uint8ClampedArray(4 * 400);
+  for (let i = 0; i < 400; i++) data.set(i < 300 ? [120, 80, 50, 255] : [240, 235, 225, 255], i * 4);
+  const pal = extractPalette(data, 2);
+  assert.equal(pal.length, 2);
+  assert.equal(pal[0], '#785032');
+});

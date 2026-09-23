@@ -147,33 +147,45 @@ export function harmonyOf(hexes) {
 /**
  * Score the tonal structure of an outfit.
  *
- * The failure this catches is the "muddy middle": three garments all at the
- * same mid lightness, which reads as an accident rather than a choice. A good
- * outfit usually has a clear light/dark step somewhere in it.
+ * Two different failures look alike in numbers and must not be confused:
+ *
+ * - The "muddy middle": different colours all at one mid lightness, which
+ *   reads as an accident — navy with black, olive with brown at equal depth.
+ * - A tonal outfit: one colour family at close lightness, which is a
+ *   deliberate, quiet look — all navy, all grey, cream on beige.
+ *
+ * Contrast is not the goal. Harmony is. So a small lightness spread is only
+ * penalised when the colours do NOT belong to one family.
  */
 export function contrastOf(hexes) {
   const colors = hexes.filter(Boolean);
-  if (colors.length < 2) return { score: 0.7, reasons: [] };
+  if (colors.length < 2) return { score: 0.75, reasons: [] };
 
   const lums = colors.map(luminance).sort((a, b) => a - b);
   const spread = lums[lums.length - 1] - lums[0];
-  const reasons = [];
 
-  let score;
-  if (spread < 0.05) {
-    // Near-identical tones. Fine if the colours genuinely match, poor if not.
-    score = 0.45;
-    reasons.push('everything at one tone — flat');
-  } else if (spread < 0.15) {
-    score = 0.55;
-    reasons.push('tones close enough to look like a near-miss');
-  } else if (spread < 0.55) {
-    score = 0.95;
-    reasons.push('clear light–dark structure');
-  } else {
-    score = 0.82;
-    reasons.push('strong light–dark contrast');
+  const hsl = colors.map(hexToHsl);
+  const chromatic = hsl.filter((c) => c.s >= 0.15);
+  let maxHueGap = 0;
+  for (let i = 0; i < chromatic.length; i++) {
+    for (let j = i + 1; j < chromatic.length; j++) {
+      maxHueGap = Math.max(maxHueGap, hueDistance(chromatic[i].h, chromatic[j].h));
+    }
   }
+  // One family: every chromatic colour within a narrow hue band. Greys only
+  // join that family when the colour is muted — a dusty sage sits tonally with
+  // grey, but a saturated navy beside near-black at the same depth is the
+  // classic muddy pairing, not a tonal one.
+  const allChromatic = chromatic.length === colors.length;
+  const mutedOnly = chromatic.every((c) => c.s < 0.35);
+  const oneFamily = maxHueGap <= 25 && (allChromatic || mutedOnly);
 
-  return { score, spread, reasons };
+  if (spread < 0.15) {
+    if (oneFamily) {
+      return { score: 0.9, spread, tonal: true, reasons: ['tonal — one colour family, texture does the work'] };
+    }
+    return { score: spread < 0.05 ? 0.6 : 0.68, spread, reasons: ['different colours at the same depth — reads a little muddy'] };
+  }
+  if (spread < 0.55) return { score: 0.95, spread, reasons: ['clear light–dark structure'] };
+  return { score: 0.85, spread, reasons: ['strong light–dark contrast'] };
 }

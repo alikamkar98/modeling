@@ -28,8 +28,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9026.webp",
-   "cutoutCoverage": 0.243,
-   "fit": "relaxed"
+   "cutoutCoverage": 0.242,
+   "fit": "relaxed",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9027",
@@ -55,8 +56,9 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9027.webp",
-   "cutoutCoverage": 0.329,
-   "fit": "relaxed"
+   "cutoutCoverage": 0.328,
+   "fit": "relaxed",
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9028",
@@ -83,8 +85,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9028.webp",
-   "cutoutCoverage": 0.298,
-   "fit": "relaxed"
+   "cutoutCoverage": 0.297,
+   "fit": "relaxed",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9029",
@@ -110,8 +113,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9029.webp",
-   "cutoutCoverage": 0.382,
-   "fit": "regular"
+   "cutoutCoverage": 0.381,
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9030",
@@ -137,8 +141,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9030.webp",
-   "cutoutCoverage": 0.348,
-   "fit": "regular"
+   "cutoutCoverage": 0.346,
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9031",
@@ -165,7 +170,8 @@
    },
    "cutout": "assets/cutouts/IMG_9031.webp",
    "cutoutCoverage": 0.448,
-   "fit": "regular"
+   "fit": "regular",
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9032_2",
@@ -192,7 +198,8 @@
    },
    "cutout": "assets/cutouts/IMG_9032_2.webp",
    "cutoutCoverage": 0.416,
-   "fit": "baggy"
+   "fit": "baggy",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9035",
@@ -218,8 +225,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9035.webp",
-   "cutoutCoverage": 0.288,
-   "fit": "regular"
+   "cutoutCoverage": 0.287,
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9062",
@@ -246,7 +254,8 @@
    },
    "cutout": "assets/cutouts/IMG_9062.webp",
    "cutoutCoverage": 0.345,
-   "fit": "regular"
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9065_2",
@@ -273,7 +282,8 @@
    },
    "cutout": "assets/cutouts/IMG_9065_2.webp",
    "cutoutCoverage": 0.395,
-   "fit": "regular"
+   "fit": "regular",
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9068",
@@ -300,7 +310,8 @@
    },
    "cutout": "assets/cutouts/IMG_9068.webp",
    "cutoutCoverage": 0.396,
-   "fit": "wide"
+   "fit": "wide",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9075",
@@ -326,8 +337,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9075.webp",
-   "cutoutCoverage": 0.339,
-   "fit": "regular"
+   "cutoutCoverage": 0.337,
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9086",
@@ -353,8 +365,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9086.webp",
-   "cutoutCoverage": 0.322,
-   "fit": "regular"
+   "cutoutCoverage": 0.321,
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9089",
@@ -381,7 +394,8 @@
    },
    "cutout": "assets/cutouts/IMG_9089.webp",
    "cutoutCoverage": 0.331,
-   "fit": "regular"
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9090",
@@ -408,7 +422,8 @@
    },
    "cutout": "assets/cutouts/IMG_9090.webp",
    "cutoutCoverage": 0.156,
-   "fit": "regular"
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9093",
@@ -434,8 +449,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9093.webp",
-   "cutoutCoverage": 0.218,
-   "fit": "slim"
+   "cutoutCoverage": 0.216,
+   "fit": "slim",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9101_2",
@@ -462,7 +478,8 @@
    },
    "cutout": "assets/cutouts/IMG_9101_2.webp",
    "cutoutCoverage": 0.279,
-   "fit": "regular"
+   "fit": "regular",
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9102_2",
@@ -489,7 +506,8 @@
    },
    "cutout": "assets/cutouts/IMG_9102_2.webp",
    "cutoutCoverage": 0.248,
-   "fit": "regular"
+   "fit": "regular",
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9103_2",
@@ -516,7 +534,8 @@
    },
    "cutout": "assets/cutouts/IMG_9103_2.webp",
    "cutoutCoverage": 0.29,
-   "fit": "regular"
+   "fit": "regular",
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9036_2",
@@ -542,7 +561,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9036_2.webp",
-   "cutoutCoverage": 0.36
+   "cutoutCoverage": 0.36,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9037",
@@ -568,7 +590,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9037.webp",
-   "cutoutCoverage": 0.368
+   "cutoutCoverage": 0.367,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9038",
@@ -594,7 +619,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9038.webp",
-   "cutoutCoverage": 0.373
+   "cutoutCoverage": 0.373,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9039",
@@ -620,7 +648,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9039.webp",
-   "cutoutCoverage": 0.372
+   "cutoutCoverage": 0.372,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9040",
@@ -646,7 +677,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9040.webp",
-   "cutoutCoverage": 0.346
+   "cutoutCoverage": 0.346,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9041",
@@ -672,7 +706,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9041.webp",
-   "cutoutCoverage": 0.355
+   "cutoutCoverage": 0.355,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9042",
@@ -698,7 +735,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9042.webp",
-   "cutoutCoverage": 0.388
+   "cutoutCoverage": 0.387,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9043",
@@ -724,7 +764,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9043.webp",
-   "cutoutCoverage": 0.315
+   "cutoutCoverage": 0.315,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9044",
@@ -750,7 +793,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9044.webp",
-   "cutoutCoverage": 0.411
+   "cutoutCoverage": 0.411,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9045",
@@ -776,7 +822,10 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9045.webp",
-   "cutoutCoverage": 0.32
+   "cutoutCoverage": 0.319,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9046",
@@ -802,7 +851,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9046.webp",
-   "cutoutCoverage": 0.383
+   "cutoutCoverage": 0.383,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9047",
@@ -828,7 +880,10 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9047.webp",
-   "cutoutCoverage": 0.358
+   "cutoutCoverage": 0.358,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9048",
@@ -854,7 +909,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9048.webp",
-   "cutoutCoverage": 0.412
+   "cutoutCoverage": 0.412,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9049",
@@ -880,7 +938,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9049.webp",
-   "cutoutCoverage": 0.39
+   "cutoutCoverage": 0.388,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9092",
@@ -906,7 +967,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9092.webp",
-   "cutoutCoverage": 0.324
+   "cutoutCoverage": 0.322,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9080",
@@ -932,7 +996,10 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9080.webp",
-   "cutoutCoverage": 0.409
+   "cutoutCoverage": 0.408,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9033_2",
@@ -958,7 +1025,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9033_2.webp",
-   "cutoutCoverage": 0.243
+   "cutoutCoverage": 0.242,
+   "cutoutMethod": "auto",
+   "layer": "mid",
+   "collar": false
   },
   {
    "id": "item-9050",
@@ -984,7 +1054,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9050.webp",
-   "cutoutCoverage": 0.258
+   "cutoutCoverage": 0.258,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9051_2",
@@ -1010,7 +1083,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9051_2.webp",
-   "cutoutCoverage": 0.285
+   "cutoutCoverage": 0.284,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9052_2",
@@ -1036,7 +1112,10 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9052_2.webp",
-   "cutoutCoverage": 0.289
+   "cutoutCoverage": 0.289,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9053",
@@ -1062,7 +1141,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9053.webp",
-   "cutoutCoverage": 0.257
+   "cutoutCoverage": 0.257,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9054",
@@ -1088,7 +1170,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9054.webp",
-   "cutoutCoverage": 0.222
+   "cutoutCoverage": 0.22,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9070",
@@ -1114,7 +1199,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9070.webp",
-   "cutoutCoverage": 0.272
+   "cutoutCoverage": 0.27,
+   "cutoutMethod": "auto+peel",
+   "layer": "mid",
+   "collar": false
   },
   {
    "id": "item-9091",
@@ -1140,7 +1228,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9091.webp",
-   "cutoutCoverage": 0.24
+   "cutoutCoverage": 0.239,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9096",
@@ -1166,7 +1257,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9096.webp",
-   "cutoutCoverage": 0.413
+   "cutoutCoverage": 0.412,
+   "cutoutMethod": "auto",
+   "layer": "mid",
+   "collar": false
   },
   {
    "id": "item-9079",
@@ -1192,7 +1286,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9079.webp",
-   "cutoutCoverage": 0.358
+   "cutoutCoverage": 0.357,
+   "cutoutMethod": "auto",
+   "layer": "mid",
+   "collar": false
   },
   {
    "id": "item-9085",
@@ -1218,7 +1315,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9085.webp",
-   "cutoutCoverage": 0.33
+   "cutoutCoverage": 0.329,
+   "cutoutMethod": "auto",
+   "layer": "mid",
+   "collar": false
   },
   {
    "id": "item-9087",
@@ -1244,7 +1344,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9087.webp",
-   "cutoutCoverage": 0.336
+   "cutoutCoverage": 0.336,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9055",
@@ -1270,7 +1373,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9055.webp",
-   "cutoutCoverage": 0.319
+   "cutoutCoverage": 0.319,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9056",
@@ -1296,7 +1402,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9056.webp",
-   "cutoutCoverage": 0.312
+   "cutoutCoverage": 0.311,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9058_2",
@@ -1322,7 +1431,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9058_2.webp",
-   "cutoutCoverage": 0.324
+   "cutoutCoverage": 0.324,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9059_2",
@@ -1348,7 +1460,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9059_2.webp",
-   "cutoutCoverage": 0.325
+   "cutoutCoverage": 0.325,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9061",
@@ -1374,7 +1489,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9061.webp",
-   "cutoutCoverage": 0.36
+   "cutoutCoverage": 0.36,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9100_2",
@@ -1400,7 +1518,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9100_2.webp",
-   "cutoutCoverage": 0.443
+   "cutoutCoverage": 0.443,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": false
   },
   {
    "id": "item-9060_2",
@@ -1426,7 +1547,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9060_2.webp",
-   "cutoutCoverage": 0.395
+   "cutoutCoverage": 0.395,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9063",
@@ -1452,7 +1576,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9063.webp",
-   "cutoutCoverage": 0.383
+   "cutoutCoverage": 0.382,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9064",
@@ -1478,7 +1605,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9064.webp",
-   "cutoutCoverage": 0.382
+   "cutoutCoverage": 0.382,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9066_2",
@@ -1504,7 +1634,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9066_2.webp",
-   "cutoutCoverage": 0.299
+   "cutoutCoverage": 0.298,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9072",
@@ -1530,7 +1663,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9072.webp",
-   "cutoutCoverage": 0.462
+   "cutoutCoverage": 0.462,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9081",
@@ -1556,7 +1692,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9081.webp",
-   "cutoutCoverage": 0.384
+   "cutoutCoverage": 0.383,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9082",
@@ -1582,7 +1721,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9082.webp",
-   "cutoutCoverage": 0.398
+   "cutoutCoverage": 0.397,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9083",
@@ -1608,7 +1750,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9083.webp",
-   "cutoutCoverage": 0.283
+   "cutoutCoverage": 0.282,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9084_2",
@@ -1634,7 +1779,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9084_2.webp",
-   "cutoutCoverage": 0.249
+   "cutoutCoverage": 0.248,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9097",
@@ -1660,7 +1808,10 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9097.webp",
-   "cutoutCoverage": 0.385
+   "cutoutCoverage": 0.384,
+   "cutoutMethod": "auto+peel",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9098_2",
@@ -1686,7 +1837,10 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9098_2.webp",
-   "cutoutCoverage": 0.236
+   "cutoutCoverage": 0.235,
+   "cutoutMethod": "auto",
+   "layer": "base",
+   "collar": true
   },
   {
    "id": "item-9034",
@@ -1712,7 +1866,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9034.webp",
-   "cutoutCoverage": 0.195
+   "cutoutCoverage": 0.209,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9067_2",
@@ -1738,7 +1893,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9067_2.webp",
-   "cutoutCoverage": 0.365
+   "cutoutCoverage": 0.364,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9069",
@@ -1764,7 +1920,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9069.webp",
-   "cutoutCoverage": 0.236
+   "cutoutCoverage": 0.235,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9071",
@@ -1791,7 +1948,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9071.webp",
-   "cutoutCoverage": 0.403
+   "cutoutCoverage": 0.402,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9073",
@@ -1817,7 +1975,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9073.webp",
-   "cutoutCoverage": 0.307
+   "cutoutCoverage": 0.307,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9077",
@@ -1844,7 +2003,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9077.webp",
-   "cutoutCoverage": 0.294
+   "cutoutCoverage": 0.294,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9078",
@@ -1870,7 +2030,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9078.webp",
-   "cutoutCoverage": 0.267
+   "cutoutCoverage": 0.266,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9088_2",
@@ -1897,7 +2058,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9088_2.webp",
-   "cutoutCoverage": 0.368
+   "cutoutCoverage": 0.368,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9094_2",
@@ -1923,7 +2085,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9094_2.webp",
-   "cutoutCoverage": 0.488
+   "cutoutCoverage": 0.484,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9095",
@@ -1949,7 +2112,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9095.webp",
-   "cutoutCoverage": 0.274
+   "cutoutCoverage": 0.273,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9099_2",
@@ -1975,7 +2139,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9099_2.webp",
-   "cutoutCoverage": 0.385
+   "cutoutCoverage": 0.384,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9104_2",
@@ -2001,8 +2166,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9104_2.webp",
-   "cutoutCoverage": 0.333,
-   "dressy": false
+   "cutoutCoverage": 0.332,
+   "dressy": false,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9105_2",
@@ -2028,8 +2194,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9105_2.webp",
-   "cutoutCoverage": 0.39,
-   "dressy": false
+   "cutoutCoverage": 0.364,
+   "dressy": false,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9106",
@@ -2056,8 +2223,9 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9106.webp",
-   "cutoutCoverage": 0.405,
-   "dressy": false
+   "cutoutCoverage": 0.362,
+   "dressy": false,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9107",
@@ -2084,7 +2252,8 @@
    },
    "cutout": "assets/cutouts/IMG_9107.webp",
    "cutoutCoverage": 0.408,
-   "dressy": false
+   "dressy": false,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9108",
@@ -2110,8 +2279,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9108.webp",
-   "cutoutCoverage": 0.5,
-   "dressy": false
+   "cutoutCoverage": 0.568,
+   "dressy": false,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9109",
@@ -2137,8 +2307,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9109.webp",
-   "cutoutCoverage": 0.364,
-   "dressy": false
+   "cutoutCoverage": 0.363,
+   "dressy": false,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9110",
@@ -2165,8 +2336,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9110.webp",
-   "cutoutCoverage": 0.417,
-   "dressy": false
+   "cutoutCoverage": 0.358,
+   "dressy": false,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9111",
@@ -2192,8 +2364,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9111.webp",
-   "cutoutCoverage": 0.51,
-   "dressy": false
+   "cutoutCoverage": 0.509,
+   "dressy": false,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9112",
@@ -2219,8 +2392,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9112.webp",
-   "cutoutCoverage": 0.393,
-   "dressy": false
+   "cutoutCoverage": 0.385,
+   "dressy": false,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9113",
@@ -2247,8 +2421,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9113.webp",
-   "cutoutCoverage": 0.465,
-   "dressy": false
+   "cutoutCoverage": 0.455,
+   "dressy": false,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9114",
@@ -2274,8 +2449,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9114.webp",
-   "cutoutCoverage": 0.376,
-   "dressy": false
+   "cutoutCoverage": 0.556,
+   "dressy": false,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9115",
@@ -2287,7 +2463,7 @@
    "hex": "#130f0f",
    "pattern": "solid",
    "warmth": 2,
-   "formality": 3,
+   "formality": 4,
    "style": "smart-casual",
    "color": {
     "name": "black",
@@ -2301,8 +2477,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9115.webp",
-   "cutoutCoverage": 0.421,
-   "dressy": true
+   "cutoutCoverage": 0.419,
+   "dressy": true,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9116",
@@ -2314,7 +2491,7 @@
    "hex": "#130d0b",
    "pattern": "solid",
    "warmth": 2,
-   "formality": 3,
+   "formality": 4,
    "style": "smart-casual",
    "color": {
     "name": "brown",
@@ -2328,8 +2505,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9116.webp",
-   "cutoutCoverage": 0.288,
-   "dressy": true
+   "cutoutCoverage": 0.287,
+   "dressy": true,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9117",
@@ -2355,8 +2533,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9117.webp",
-   "cutoutCoverage": 0.472,
-   "dressy": false
+   "cutoutCoverage": 0.462,
+   "dressy": false,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9118",
@@ -2382,8 +2561,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9118.webp",
-   "cutoutCoverage": 0.33,
-   "dressy": false
+   "cutoutCoverage": 0.329,
+   "dressy": false,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9119",
@@ -2409,8 +2589,9 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9119.webp",
-   "cutoutCoverage": 0.275,
-   "dressy": false
+   "cutoutCoverage": 0.264,
+   "dressy": false,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9120",
@@ -2436,7 +2617,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9120.webp",
-   "cutoutCoverage": 0.44
+   "cutoutCoverage": 0.438,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9121",
@@ -2462,7 +2644,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9121.webp",
-   "cutoutCoverage": 0.371
+   "cutoutCoverage": 0.521,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9122_2",
@@ -2488,7 +2671,8 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9122_2.webp",
-   "cutoutCoverage": 0.439
+   "cutoutCoverage": 0.536,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9123_2",
@@ -2514,7 +2698,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9123_2.webp",
-   "cutoutCoverage": 0.387
+   "cutoutCoverage": 0.401,
+   "cutoutMethod": "hinted"
   },
   {
    "id": "item-9124_2",
@@ -2540,7 +2725,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9124_2.webp",
-   "cutoutCoverage": 0.318
+   "cutoutCoverage": 0.313,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9125_2",
@@ -2566,7 +2752,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9125_2.webp",
-   "cutoutCoverage": 0.364
+   "cutoutCoverage": 0.36,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9126_2",
@@ -2592,7 +2779,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9126_2.webp",
-   "cutoutCoverage": 0.346
+   "cutoutCoverage": 0.346,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9127",
@@ -2618,7 +2806,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9127.webp",
-   "cutoutCoverage": 0.391
+   "cutoutCoverage": 0.376,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9128_2",
@@ -2644,7 +2833,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9128_2.webp",
-   "cutoutCoverage": 0.336
+   "cutoutCoverage": 0.336,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9129_2",
@@ -2670,7 +2860,8 @@
     "neutral": false
    },
    "cutout": "assets/cutouts/IMG_9129_2.webp",
-   "cutoutCoverage": 0.356
+   "cutoutCoverage": 0.355,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9130_2",
@@ -2696,7 +2887,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9130_2.webp",
-   "cutoutCoverage": 0.441
+   "cutoutCoverage": 0.44,
+   "cutoutMethod": "auto"
   },
   {
    "id": "item-9131_2",
@@ -2722,7 +2914,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9131_2.webp",
-   "cutoutCoverage": 0.342
+   "cutoutCoverage": 0.34,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9132_2",
@@ -2748,7 +2941,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9132_2.webp",
-   "cutoutCoverage": 0.288
+   "cutoutCoverage": 0.286,
+   "cutoutMethod": "auto+peel"
   },
   {
    "id": "item-9133",
@@ -2774,7 +2968,8 @@
     "neutral": true
    },
    "cutout": "assets/cutouts/IMG_9133.webp",
-   "cutoutCoverage": 0.447
+   "cutoutCoverage": 0.446,
+   "cutoutMethod": "auto+peel"
   }
  ],
  "skipped": [],

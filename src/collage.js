@@ -32,18 +32,41 @@ const LAYOUTS = {
     top: [52, 3, 45, 45],
     bottom: [22, 55, 56, 42],
   },
+  // A knit worn over a shirt shows as its own piece, beside the shirt it covers.
+  'outerwear,mid,top,bottom,shoes': {
+    outerwear: [2, 3, 31, 45], mid: [34.5, 3, 31, 45], top: [67, 3, 31, 45],
+    bottom: [4, 51, 44, 46], shoes: [52, 51, 44, 46],
+  },
+  'mid,top,bottom,shoes': {
+    mid: [3, 3, 45, 45], top: [52, 3, 45, 45],
+    bottom: [52, 52, 45, 45], shoes: [3, 52, 45, 45],
+  },
+  'outerwear,mid,top,bottom': {
+    outerwear: [2, 3, 31, 45], mid: [34.5, 3, 31, 45], top: [67, 3, 31, 45],
+    bottom: [25, 51, 50, 46],
+  },
+  'mid,top,bottom': {
+    mid: [3, 3, 45, 45], top: [52, 3, 45, 45], bottom: [25, 51, 50, 46],
+  },
   'top,bottom': {
     top: [5, 8, 44, 40],
     bottom: [53, 5, 42, 88],
   },
 };
 
-const SLOT_ORDER = ['outerwear', 'top', 'bottom', 'shoes'];
+const SLOT_ORDER = ['outerwear', 'mid', 'top', 'bottom', 'shoes'];
+
+/** Where a garment sits: a knit over a second top is the 'mid' layer. */
+function roleOf(item, items) {
+  if (item.category === 'top' && item.layer === 'mid'
+      && items.filter((i) => i.category === 'top').length > 1) return 'mid';
+  return item.category;
+}
 
 /** Pick the layout matching the slots this outfit fills. */
 function layoutFor(items) {
-  const present = SLOT_ORDER.filter((slot) => items.some((i) => i.category === slot));
-  return LAYOUTS[present.join(',')] ?? null;
+  const roles = new Set(items.map((i) => roleOf(i, items)));
+  return LAYOUTS[SLOT_ORDER.filter((r) => roles.has(r)).join(',')] ?? null;
 }
 
 export function renderCollage(items, { id = '' } = {}) {
@@ -66,7 +89,7 @@ export function composeCollage(el, items) {
   // shown rather than silently disappearing.
   const wearable = items.filter((i) => SLOT_ORDER.includes(i.category));
   const boxes = layout
-    ? wearable.map((i) => [i, layout[i.category]])
+    ? wearable.map((i) => [i, layout[roleOf(i, items)]])
     : wearable.map((i, n) => [i, [4 + n * (92 / wearable.length), 24, 92 / wearable.length - 5, 52]]);
 
   for (const [item, box] of boxes) {

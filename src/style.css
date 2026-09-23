@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
   --bg: #f7f6f3;
   --surface: #ffffff;
@@ -14,31 +14,6 @@
   --gutter: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #15161a;
-    --surface: #1e2026;
-    --surface-2: #272a31;
-    --ink: #ecebe7;
-    --ink-soft: #a3a199;
-    --line: #333740;
-    --accent: #8fc4a8;
-    --accent-ink: #14201a;
-    --warn: #e0ae6a;
-  }
-}
-
-:root[data-theme="dark"] {
-  --bg: #15161a;
-  --surface: #1e2026;
-  --surface-2: #272a31;
-  --ink: #ecebe7;
-  --ink-soft: #a3a199;
-  --line: #333740;
-  --accent: #8fc4a8;
-  --accent-ink: #14201a;
-  --warn: #e0ae6a;
-}
 
 * { box-sizing: border-box; }
 
@@ -164,10 +139,6 @@ main { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
 .collage__piece--top       { z-index: 3; }
 .collage__piece--shoes     { z-index: 4; }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .collage { background: #f4f3f0; }
-}
-:root[data-theme="dark"] .collage { background: #f4f3f0; }
 
 /* Paging through suggestions */
 .pager {
@@ -228,3 +199,23 @@ main { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
   font: inherit; font-size: 0.75rem; cursor: pointer;
 }
 .card__retire:hover { color: var(--ink); }
+
+/* Garments are photographed on pale wood; they read best on a pale ground,
+   so the whole app stays light. */
+.trip { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+.trip label { display: flex; flex-direction: column; font-size: 13px; color: var(--ink-soft); gap: 4px; flex: 1 1 140px; }
+.trip select, .trip input { font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; }
+.weather__adjust { margin-top: 6px; }
+.chip.is-on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.moods { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin: 16px 0; }
+.mood { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; }
+.mood.is-on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.mood__pick { all: unset; cursor: pointer; display: block; width: 100%; }
+.mood__swatches { display: flex; height: 44px; border-radius: 8px; overflow: hidden; }
+.mood__swatches span { flex: 1; }
+.mood__label { display: block; margin-top: 6px; font-weight: 600; }
+.mood__photos { display: flex; gap: 4px; margin-top: 6px; overflow-x: auto; }
+.mood__photos img { width: 44px; height: 44px; object-fit: cover; border-radius: 6px; }
+.mood-new { display: flex; flex-direction: column; gap: 8px; max-width: 420px; }
+.mood-new input[type=text] { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; }

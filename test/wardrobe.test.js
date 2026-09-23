@@ -37,7 +37,7 @@ test('gym outfits contain only sportswear', () => {
   // Regression: "casual is one step from sporty" once put work dungarees and a
   // knit sweater in a gym outfit.
   for (const t of [0, 12, 26]) {
-    const r = suggestOutfits(W, 'sport', weather(t));
+    const r = suggestOutfits(W, 'gym', weather(t));
     assert.equal(r.ok, true, `sport @${t}C: ${r.reason}`);
     for (const outfit of r.outfits) {
       for (const item of outfit.items) {
@@ -50,11 +50,11 @@ test('gym outfits contain only sportswear', () => {
 test('formal outfits never drop below the occasion formality', () => {
   // Regression: a one-point slack let a polo shirt into a job interview.
   for (const t of [0, 12, 26]) {
-    const r = suggestOutfits(W, 'formal', weather(t));
+    const r = suggestOutfits(W, 'interview', weather(t));
     assert.equal(r.ok, true, `formal @${t}C: ${r.reason}`);
     for (const outfit of r.outfits) {
       for (const item of outfit.items) {
-        assert.ok(item.formality >= OCCASIONS.formal.formality.min,
+        assert.ok(item.formality >= OCCASIONS.interview.formality.min,
           `${item.name} (formality ${item.formality}) is too casual for a formal occasion`);
       }
     }
@@ -71,14 +71,14 @@ test('a warm downpour still produces an outfit, with a warning', () => {
 });
 
 test('cold weather still reaches for a coat when one fits', () => {
-  const r = suggestOutfits(W, 'casual-out', weather(-5));
+  const r = suggestOutfits(W, 'coffee', weather(-5));
   assert.equal(r.ok, true, r.reason);
   assert.ok(r.outfits.every((o) => o.items.some((i) => i.category === 'outerwear')),
     'freezing weather should produce an outer layer');
 });
 
 test('shorts are not suggested below 12C', () => {
-  for (const key of ['university', 'casual-out', 'outdoors']) {
+  for (const key of ['university', 'coffee', 'walking']) {
     const r = suggestOutfits(W, key, weather(4));
     assert.equal(r.ok, true, `${key}: ${r.reason}`);
     for (const outfit of r.outfits) {
@@ -197,7 +197,7 @@ test('a dress shoe is never put under a baggy leg', () => {
   // The complaint that produced this rule: brown suede sneakers suggested with
   // wide-leg jeans. Colour harmony was fine; the proportions were not.
   const loose = new Set(['baggy', 'wide', 'relaxed']);
-  for (const key of ['university', 'casual-out', 'dinner']) {
+  for (const key of ['university', 'coffee', 'dinner']) {
     for (const t of [6, 16, 24]) {
       const r = suggestOutfits(W, key, weather(t), { count: 12 });
       if (!r.ok) continue;
@@ -237,4 +237,34 @@ test('the base layer is not filed as trousers', () => {
   assert.match(t.name, /base.layer/i);
   assert.equal(t.style, 'sporty');
   assert.equal(t.formality, 1);
+});
+
+test('interview looks are plain, collared or fine-knit, never printed', () => {
+  for (const t of [5, 15, 25]) {
+    const r = suggestOutfits(W, 'interview', weather(t), { count: 10 });
+    assert.equal(r.ok, true);
+    for (const o of r.outfits) {
+      assert.ok(!o.items.some((i) => i.pattern === 'printed' || i.pattern === 'checked'), o.name);
+      assert.ok(o.items.every((i) => i.formality >= 4), `${o.items.map((i) => i.name)}`);
+    }
+  }
+});
+
+test('layering never puts a knit over a sleeveless top, and never in the heat', () => {
+  for (const t of [8, 15, 30]) {
+    for (const key of ['university', 'dinner', 'date', 'coffee']) {
+      const r = suggestOutfits(W, key, weather(t), { count: 30 });
+      for (const o of r.outfits ?? []) {
+        const tops = o.items.filter((i) => i.category === 'top');
+        if (tops.length < 2) continue;
+        assert.ok(t < 26, `${key}: layered top at ${t}C`);
+        assert.ok(!tops.some((i) => i.subtype === 'tank top'), `${key}: knit over a tank top`);
+      }
+    }
+  }
+});
+
+test('dinner offers plenty of distinct looks', () => {
+  const r = suggestOutfits(W, 'dinner', weather(15), { count: 30 });
+  assert.ok(r.outfits.length >= 12, `only ${r.outfits.length}`);
 });
