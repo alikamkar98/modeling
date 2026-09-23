@@ -1,0 +1,221 @@
+:root {
+  color-scheme: light;
+
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --surface-2: #efede8;
+  --ink: #1d1c1a;
+  --ink-soft: #6a6862;
+  --line: #e0ddd6;
+  --accent: #3c5a4a;
+  --accent-ink: #ffffff;
+  --warn: #8a5a1c;
+  --radius: 14px;
+  --gutter: 16px;
+}
+
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+main { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
+
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-wrap: wrap; gap: 12px;
+  align-items: center; justify-content: space-between;
+  padding: 12px var(--gutter);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.bar h1 { font-size: 1.1rem; margin: 0; letter-spacing: 0.01em; }
+
+.tabs { display: flex; gap: 6px; }
+.tab {
+  min-height: 44px; padding: 0 16px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); color: var(--ink-soft);
+  font: inherit; font-size: 0.92rem; cursor: pointer;
+}
+.tab.is-active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+.panel { padding-top: 20px; }
+.is-hidden { display: none; }
+
+/* Weather ------------------------------------------------------------- */
+.weather {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+  padding: 14px 16px; margin-bottom: 22px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.weather__temp { font-size: 1.5rem; font-weight: 600; }
+.weather__desc { color: var(--ink-soft); }
+.weather__meta { color: var(--ink-soft); font-size: 0.88rem; }
+.weather__flag { color: var(--warn); font-size: 0.88rem; }
+.weather--manual { border-style: dashed; }
+
+/* Ask ----------------------------------------------------------------- */
+.ask__label { display: block; font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; }
+.ask__row { display: flex; gap: 8px; flex-wrap: wrap; }
+.ask__row input {
+  flex: 1 1 240px; min-height: 48px; padding: 0 14px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: var(--surface); color: var(--ink); font: inherit;
+}
+.ask__row input:focus-visible, .btn:focus-visible, .tab:focus-visible, .chip:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+.btn {
+  min-height: 48px; padding: 0 20px;
+  border-radius: 10px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink);
+  font: inherit; font-weight: 500; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn--primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn--ghost { background: var(--surface-2); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip {
+  min-height: 44px; padding: 0 14px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); color: var(--ink-soft);
+  font: inherit; font-size: 0.92rem; cursor: pointer;
+}
+.chip:hover { color: var(--ink); }
+.chip.is-on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+/* Results ------------------------------------------------------------- */
+.results { margin-top: 28px; display: grid; gap: 20px; }
+
+.outfit {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; display: grid; gap: 18px;
+  grid-template-columns: minmax(200px, 300px) 1fr;
+}
+@media (max-width: 620px) { .outfit { grid-template-columns: 1fr; } }
+
+.outfit__figure {
+  background: #f4f3f0; border-radius: 10px; padding: 10px;
+}
+.outfit__figure svg { max-width: 100%; height: auto; }
+
+/* The collage: the garments themselves, cut out and composed. */
+.collage {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  background: var(--surface);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.collage__piece {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16));
+}
+/* Garments that can't be lifted off the floor keep their photograph, framed so
+   the composition still reads as deliberate rather than half-finished. */
+.collage__piece--photo {
+  object-fit: cover;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+  filter: none;
+}
+/* Outerwear sits behind, shoes in front — the same stacking a stylist would
+   use laying pieces out on a table. */
+.collage__piece--outerwear { z-index: 1; }
+.collage__piece--bottom    { z-index: 2; }
+.collage__piece--top       { z-index: 3; }
+.collage__piece--shoes     { z-index: 4; }
+
+
+/* Paging through suggestions */
+.pager {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  padding-top: 4px;
+}
+.pager__count { color: var(--ink-soft); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.pager .btn[disabled] { opacity: 0.4; cursor: default; }
+
+.outfit__rank { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
+.outfit__why { margin: 4px 0 14px; font-size: 0.95rem; color: var(--ink-soft); }
+.outfit__warn { color: var(--warn); font-size: 0.9rem; margin: 0 0 12px; }
+
+.items { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.item { width: 92px; }
+.item__thumb {
+  width: 92px; height: 92px; border-radius: 10px; overflow: hidden;
+  background: var(--surface-2); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+}
+.item__thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.item__swatch { width: 100%; height: 100%; }
+.item__name { font-size: 0.78rem; color: var(--ink-soft); margin-top: 6px; line-height: 1.3; }
+
+.palette { display: flex; gap: 0; margin-top: 14px; border-radius: 6px; overflow: hidden; width: fit-content; }
+.palette span { width: 34px; height: 14px; display: block; }
+
+/* Closet -------------------------------------------------------------- */
+.closet__intro { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.grid {
+  margin-top: 18px;
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.card__media { aspect-ratio: 1; background: var(--surface-2); }
+.card__media img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.card__body { padding: 8px 10px 10px; }
+.card__name { font-size: 0.85rem; }
+.card__meta { font-size: 0.75rem; color: var(--ink-soft); margin-top: 2px; }
+
+/* Shared -------------------------------------------------------------- */
+.muted { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
+.notice {
+  padding: 16px; border: 1px dashed var(--line); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink-soft);
+}
+.notice strong { color: var(--ink); }
+.notice ul { margin: 8px 0 0; padding-left: 20px; }
+
+.card--retired { opacity: 0.45; }
+.card--retired .card__media { filter: grayscale(1); }
+.card__retire {
+  margin-top: 8px; width: 100%; min-height: 36px;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--surface-2); color: var(--ink-soft);
+  font: inherit; font-size: 0.75rem; cursor: pointer;
+}
+.card__retire:hover { color: var(--ink); }
+
+/* Garments are photographed on pale wood; they read best on a pale ground,
+   so the whole app stays light. */
+.trip { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+.trip label { display: flex; flex-direction: column; font-size: 13px; color: var(--ink-soft); gap: 4px; flex: 1 1 140px; }
+.trip select, .trip input { font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; }
+.weather__adjust { margin-top: 6px; }
+.chip.is-on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.moods { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin: 16px 0; }
+.mood { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; }
+.mood.is-on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.mood__pick { all: unset; cursor: pointer; display: block; width: 100%; }
+.mood__swatches { display: flex; height: 44px; border-radius: 8px; overflow: hidden; }
+.mood__swatches span { flex: 1; }
+.mood__label { display: block; margin-top: 6px; font-weight: 600; }
+.mood__photos { display: flex; gap: 4px; margin-top: 6px; overflow-x: auto; }
+.mood__photos img { width: 44px; height: 44px; object-fit: cover; border-radius: 6px; }
+.mood-new { display: flex; flex-direction: column; gap: 8px; max-width: 420px; }
+.mood-new input[type=text] { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; }
